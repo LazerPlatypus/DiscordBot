@@ -1,6 +1,7 @@
 {
   "name": "discordbot",
   "version": "1.0.0",
+  "description": "D&D Bot for discord for soundfx and more",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
