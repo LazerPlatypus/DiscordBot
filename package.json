@@ -16,6 +16,7 @@
     "url": "https://github.com/LazerPlatypus/DiscordBot/issues"
   },
   "homepage": "https://github.com/LazerPlatypus/DiscordBot#readme",
-  "keywords": [],
-  "description": ""
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
 }
