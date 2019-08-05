@@ -47,5 +47,5 @@ client.on('message', message => {
     }
 })
 
-client.login('token here');
+client.login('NjA2ODYxNzI5NDc3MDMzOTg0.XUg01Q._HQVk0gSLMPyLPlCmXfQCqcZsAE');
 })
