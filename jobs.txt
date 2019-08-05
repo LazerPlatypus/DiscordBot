@@ -1,0 +1,73 @@
+Logger
+Fisher
+Grass Cutter
+Librarian
+Actor
+Clown
+Dancer
+Fortune Teller
+Juggler
+Story Teller
+Bandit
+Beggar
+Pickpocket
+Prostitute
+Slaver
+Smuggler
+Body Gaurd
+Bounty Hunter
+Forester
+Gladiator
+Jailer
+Soldier
+Farmer
+Grave Digger
+Shepard
+Tracker
+Messenger
+Miller
+Miner
+Peddler
+Rat Cather
+Sailor
+Explorer
+Diplomat
+Knight
+Minister
+Page
+Squire
+Armorer
+Painter
+Baker
+Banker
+Black Smith
+Brewer
+Butcher
+Carpenter
+Clothier
+Cook
+Goldsmith
+Inn Keeper
+Jeweler
+Leatherworker
+Locksmith
+Mason
+Merchant
+Musician
+Tinkerer
+Torturer
+Trader
+Weaver
+Astrologer
+Cartographer
+Historian
+Poet
+Philospher
+Hermit
+Barber
+Doctor
+Medic
+Herald
+Scribe
+Acolyte
+Neophyte

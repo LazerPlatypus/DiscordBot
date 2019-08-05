@@ -1,0 +1,14 @@
+Artificer
+Barabarian
+Bard
+Cleric
+Druid
+Fighter
+Monk
+Mystic
+Paladin
+Ranger
+Rouge
+Sorcerer
+Warlock
+Wizard
