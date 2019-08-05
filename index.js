@@ -57,13 +57,14 @@ client.on('message', message => {
         con = Math.floor((Math.random() * 18) + 3);
         wis = Math.floor((Math.random() * 18) + 3);
         char= Math.floor((Math.random() * 18) + 3);
+        Race = 
+
+        Age = Math.floor((Math.random() * 154) + 6);
 
 
 
 
 
-
-        
     }
 })
 
