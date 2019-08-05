@@ -51,6 +51,19 @@ client.on('message', message => {
     console.log(message.content);
     if(message.content === '!npc'){
         message.channel.send('you have made an npc');
+        str = Math.floor((Math.random() * 18) + 3);
+        dex = Math.floor((Math.random() * 18) + 3);
+        int = Math.floor((Math.random() * 18) + 3);
+        con = Math.floor((Math.random() * 18) + 3);
+        wis = Math.floor((Math.random() * 18) + 3);
+        char= Math.floor((Math.random() * 18) + 3);
+
+
+
+
+
+
+        
     }
 })
 
