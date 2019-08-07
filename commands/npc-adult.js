@@ -4,16 +4,9 @@ module.exports = {
     execute(message, args) {
 
         const fs = require('fs'); // loads filesystem
-        const rf = require('..\\helperMethods\\readFile.js');
-        // function readFile(filename){
-        //     // read from filename
-        //     var fileContents = fs.readFileSync(filename).toString();
-        //     var mydata = fileContents.split('\n');
-        //     var myrandom = Math.floor(Math.random() * (mydata.length + 1) )    
-        //     return(mydata[myrandom].replace(/\s+/g, ' ').trim());
-        // }
-        // stats?
+        const rf = require('..\\helperMethods\\readFile.js'); //loads the file reader method in the helpermethods folder
         isAdventurer = false;
+        // generates stats
         str = Math.floor((Math.random() * 18) + 3);
         dex = Math.floor((Math.random() * 18) + 3);
         int = Math.floor((Math.random() * 18) + 3);
@@ -25,6 +18,7 @@ module.exports = {
         npcHealth = Math.floor((Math.random() * 10) + 5);
         randlevel = Math.floor((Math.random() * 90) + 1);
         advLevel = 0;
+        //randomly generates level
         if(randlevel > 1 && randlevel < 10){
             advLevel = 1; 
         }
@@ -46,11 +40,10 @@ module.exports = {
         if(randlevel > 67 && randlevel < 73){
             advLevel = 7;
         }
-
-
         if(randnum == 1){
             isAdventurer = true;
         }
+        //Generates Health based on class and level
         if(isAdventurer){
             npcclass = rf.execute("classes.txt")
             if(npcclass == "Barbarian"){
@@ -69,9 +62,11 @@ module.exports = {
         if(!isAdventurer){
             npcjob = rf.execute("jobs.txt")
         }
+        //gets names and/or jobs
         firstname = rf.execute("fnames.txt");
         lastname = rf.execute("lnames.txt");
         race = rf.execute("races.txt");
+        //prints out to the console, or in this case the chat
         if(isAdventurer){
             message.channel.send(`A(n) ${race} Adventurer appears! Their name is ${firstname} ${lastname}\n
             Str: ${str}\n
