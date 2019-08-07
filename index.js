@@ -36,10 +36,6 @@ client.on('message', message => {
         message.reply('there was an error trying to execute your command')
     }
 
-client.once('ready' ,() => {
-    console.log('Ready')
-});
-
 client.on('message', message => { 
     console.log(message.content);
     if(message.content === '!creeper'){
