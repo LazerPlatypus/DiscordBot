@@ -1,6 +1,6 @@
 module.exports = {
     name: 'read-file',
-    description: 'generates a random adult npc',
+    description: 'reads a file and returns a random element from the file',
     execute(filename) {
         const fs = require('fs'); // loads filesystem
         var fileContents = fs.readFileSync(filename).toString();
