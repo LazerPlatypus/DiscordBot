@@ -8,7 +8,7 @@ module.exports = {
         	return message.reply("Must be in voice channel to execute this command.");
 		}
 		voiceChannel.join().then(connection => {
-			dispatcher = connection.playFile(args[0]);
+			dispatcher = connection.playFile('.\\uploads\\' + args[0]);
 		})
 		.catch(console.error);
     },
