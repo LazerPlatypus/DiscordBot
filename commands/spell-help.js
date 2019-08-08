@@ -7,7 +7,6 @@ module.exports = {
         var spellData = sp.execute('spell_list.txt');
         var userSpellName = args.join(' ').trim().toUpperCase();
         var found = false;
-        console.log(userSpellName);
         for (i = 0; i < spellData.length && !found; i++) {
             if (spellData[i][0].toUpperCase() == userSpellName) {
                 message.channel.send(`__Name__: ${spellData[i][0]}\n__School__: ${spellData[i][1]}\n__Class__: ${spellData[i][2]}\n__Level__: ${spellData[i][3]}\n__Casting time__: ${spellData[i][4]}\n__Range__: ${spellData[i][5]}\n__Componants__: ${spellData[i][6]}\n__Duration__: ${spellData[i][7]}\n__Description__: ${spellData[i][8]}\n__Higher levels__: ${spellData[i][9]}\n__Source__: ${spellData[i][10]}`);
