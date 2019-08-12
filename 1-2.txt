@@ -1,0 +1,33 @@
+Ape
+Black Bear
+Cockatrice
+Crocodile
+Darkmantle
+Deep Gnome
+Dust Mephit
+Giant Goat
+Giant Sea Horse
+Giant Wasp
+Gnoll
+Gray Ooze
+Hobgoblin
+Ice Mephit
+Lizardfolk
+Magma Mephit
+Magmin
+Orc
+Reef Shark
+Rust Monster
+Sahuagin
+Satyr
+Scout
+Shadow
+Swarm of Beetles
+Swarm of Centipedes
+Swarm of Spiders
+Swarm of Insects
+Swarm of Wasps
+Thug
+Warhorse
+Warhorse Skeleton
+Worg
