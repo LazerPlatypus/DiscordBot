@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'npc-adult',
+    name: 'enemy',
     description: 'generates a enemy based on difficulty',
     execute(message, args) {
     if(message.content.startsWith("!enemy ")){
@@ -10,7 +10,7 @@ module.exports = {
     }
         const fs = require('fs'); // loads filesystem
         const rf = require('..\\helperMethods\\readFile.js'); //loads the file reader method in the helpermethods folder
-        challengerating = rf.execute("classes.txt");
+        rawenemy = rf.execute(`${difficulty}.txt`);
 
 
 
@@ -18,7 +18,7 @@ module.exports = {
 
 
         if(true){
-            message.channel.send(`textgoeshere`);
+            message.channel.send(`${rawaenemy}`);
         }
     },
 };
