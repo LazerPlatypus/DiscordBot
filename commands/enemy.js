@@ -10,7 +10,7 @@ module.exports = {
     }
         const fs = require('fs'); // loads filesystem
         const rf = require('..\\helperMethods\\readFile.js'); //loads the file reader method in the helpermethods folder
-        rawenemy = rf.execute(`${difficulty}.txt`);
+        rawenemy = rf.execute(`..\\enemies\\${difficulty}.txt`);
 
 
 
