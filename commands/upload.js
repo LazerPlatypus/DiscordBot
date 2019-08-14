@@ -14,7 +14,8 @@ module.exports = {
 
         // tells the user that their upload was successfull
         download.execute(fileURL, `uploads\\${args[0]}.${fileURL.split('.').pop()}`, function () {
-            message.channel.send(`Upload completed, the name is **${args[0]}**`);
+            message.channel.send(`Upload completed, the name is **${args[0]}**`)
+            
             console.log(`new file uploaded, the name is ${args[0]}.${fileURL.split('.').pop()}`);
         })
     },

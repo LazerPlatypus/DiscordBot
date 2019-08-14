@@ -5,6 +5,7 @@ const { prefix, token } = require('./config.json'); // loads our config file
 const client = new Discord.Client(); // makes the client
 client.commands = new Discord.Collection(); // makes a collection for our commands to go in
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js')); // gets our commands by their name
+var guildConf = require('./prefixes.json');
 
 // populates the collection of commands using the filenames
 for (const file of commandFiles) {
@@ -18,10 +19,18 @@ client.once('ready', () => {
 })
 
 // dynamic command handleing
-client.on('message', message => {
+client.on('message', async message => {
+
+    //define prefix
+    //make sure user is authorzied to use the command
+    //have user input prefix by !prefix {userselectedmessage}
+    
     // exits the method if the message doesn't start with the prefix 
     // i.e.: the message isn't addressed to the bot
+    // prefix undefined when the prefix changing code is below this line, undefined when it is above
     if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+
     
     // breaks the message into a command, followed by arguments
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -38,6 +47,8 @@ client.on('message', message => {
         console.error(error);
         message.reply('there was an error trying to execute your command')
     }
+
+    
 
 });
 
