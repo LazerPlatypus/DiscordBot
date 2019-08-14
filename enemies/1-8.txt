@@ -1,19 +1,19 @@
-Bandit
-Blood-Hawk
-Camel
-Cultist
-Diseased Giant Rat
-Flying Snake
-Giant Crab
-Giant Rat
-Giant Weasel
-Guard
-Kobold
-Mastiff
-Merfolk
-Mule
-Noble
-Venomous Snake
-Pony
-Stirge
-Tribal Warrior
+Bandit_2d8+2
+Blood-Hawk_2d6 
+Camel_2d10+4
+Cultist_2d8
+Diseased Giant Rat_1d2+5
+Flying Snake_2d4
+Giant Crab_3d8
+Giant Rat_2d6
+Giant Weasel_2d8
+Guard_2d8+2
+Kobold_2d6-2
+Mastiff_1d8+1
+Merfolk_2d8+2
+Mule_2d8+2
+Noble_2d8
+Venomous Snake_1d4
+Pony_2d8+2
+Stirge_1d4
+Tribal Warrior_2d8+2

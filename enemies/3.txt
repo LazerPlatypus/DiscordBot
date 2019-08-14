@@ -1,20 +1,20 @@
-Basilist
-Bearded Devil
-Blue Dragon Wyrmling
-Doppleganger
-Giant Scorpion
-Gold Dragon Wyrmling
-Green Hag
-Hell Hound
-Killer Whale
-Knight 
-Manticore
-Minotaur
-Mummy
-Nightmare
-Owl Bear
-Phase Spider
-Veteran
-Werewolf
-Wight
-Winter Wolf
+Basilist_8d8+16
+Bearded Devil_8d8+16
+Blue Dragon Wyrmling_8d8+16
+Doppleganger_8d8+16
+Giant Scorpion_7d10+14
+Gold Dragon Wyrmling_8d8+24
+Green Hag_11d8+33
+Hell Hound_7d8+14
+Killer Whale_12d12+12
+Knight_ 8d8+16
+Manticore_8d10+24
+Minotaur_9d10+27
+Mummy_9d8+18
+Nightmare_8d10+24
+Owl Bear_7d10+21
+Phase Spider_5d10+5
+Veteran_9d8+18
+Werewolf_9d8+18
+Wight_6d8+18
+Winter Wolf_10d10+20

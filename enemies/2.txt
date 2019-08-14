@@ -1,41 +1,41 @@
-Ankheg
-Awakened Tree
-Azer
-Bandit Captain
-Berzerker
-Black Dragon Wyrmling
-Bronze Dragon Wyrmling
-Centaur
-Cult Fanatic
-Druid
-Ettercap
-Gargoyle
-Gelatinous Cube
-Ghast
-Giant Boar
-Giant Constrictor Snake
-Giant Elk
-Gibbering Mouther
-Green Dragon Wyrmling
-Grick
-Griffon
-Hunter Shark
-Merrow
-Mimic
-Minotaur Skeleton
-Ochre Jelly
-Ogre
-Ogre Zombie
-Pegasus
-Plesiosaurus
-Polar Bear
-Preist
-Rhinoceros
-Rug of Smothering
-Saber-Toothed Tiger
-Sea Hag
-Silver Dragon Wyrmling
-Swarm of Venomous Snakes
-Wererat
-White Dragon Wyrmling
-Will-o'-Wisp
+Ankheg_6d10+6
+Awakened Tree_7d12+14
+Azer_6d8+12
+Bandit Captain_6d8+20
+Berzerker_9d8+27
+Black Dragon Wyrmling_6d8+6
+Bronze Dragon Wyrmling_5d8+10
+Centaur_6d10+12
+Cult Fanatic_6d8+6
+Druid_5d8+5
+Ettercap_8d8+8
+Gargoyle_7d8+21
+Gelatinous Cube_8d10+40
+Ghast_8d8
+Giant Boar_5d10+5
+Giant Constrictor Snake_8d12+8
+Giant Elk_5d12+10
+Gibbering Mouther_9d8+27
+Green Dragon Wyrmling_7d8+7
+Grick_6d8
+Griffon_7d10+21
+Hunter Shark_6d10+12
+Merrow_6d10+12
+Mimic_9d8+18
+Minotaur Skeleton_9d10+18
+Ochre Jelly_6d10+12
+Ogre_7d10+21
+Ogre Zombie_9d10+36
+Pegasus_7d10+21
+Plesiosaurus_8d10+24
+Polar Bear_5d10+15
+Preist_5d8+5
+Rhinoceros_6d10+12
+Rug of Smothering_6d10
+Saber-Toothed Tiger_1d2+51
+Sea Hag_7d8+21
+Silver Dragon Wyrmling_6d8+18
+Swarm of Venomous Snakes_8d8
+Wererat_6d8+6
+White Dragon Wyrmling_5d8+10
+Will-o'-Wisp_1d2+21
