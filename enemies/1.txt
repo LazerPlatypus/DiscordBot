@@ -1,0 +1,25 @@
+Animated Armor_6d8+6
+Brass Dragon Wyrmling_3d8+3
+Brown Bear_4d10+12
+Bug Bear_5d8+5
+Copper Dragon Wyrmling_4d8+4
+Death Dog_6d8+12
+Dire Wolf_5d10+10
+Dryad_5d8
+Duergar_4d8+4
+Ghoul_5d8
+Giant Eagle_4d10+4
+Giant Hyena_6d10+12
+Giant Octopus_8d10+8
+Giant Spider_4d10+4
+Giant Toad_6d10+6
+Giant Vulture_3d10+6
+Harpy_7d8+7
+Hippogriff_3d10+3
+Imp_3d4+3
+Lion_4d10+4
+Quasit_3d4
+Specter_5d8
+Spy_6d8
+Swarm of Quippers_8d8-8
+Tiger_5d10+10
