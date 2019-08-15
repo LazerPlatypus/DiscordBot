@@ -14,6 +14,11 @@ for (const file of commandFiles) {
 
 // tells us the bot is ready
 client.once('ready', () => {
+    const c = new Discord.Collection;
+    for (const file of commandFiles) {
+        const cc = require(`./commands/${file}`);
+        console.log(cc.description);
+    }
     console.log('Ready');
 })
 
@@ -30,7 +35,7 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
     // exits the method if the command doesn't exist in our collection of commands
     if(!client.commands.has(command)) return;
-    
+
     // attempts to run the command
     try {
         client.commands.get(command).execute(message, args);
