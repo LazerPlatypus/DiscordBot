@@ -44,7 +44,7 @@ module.exports = {
         const imageExtensions = ['tif', 'tiff', 'bmp', 'jpg', 'jpeg', 'gif', 'png'];
         const soundExtensions = ['mp3', 'ogg', 'aac'];
         // list of places to put sounds or images
-        const locations = ['uploads', 'uploads\\sounds', 'uploads\\images'];
+        const locations = ['uploads\\', 'uploads\\sounds\\', 'uploads\\images\\'];
 
         // the location of this file
         var location = locations[0];
@@ -56,7 +56,7 @@ module.exports = {
         }
 
         // download the image to its location with the filename specified
-        download.execute(fileURL, `${location}\\${fileName}.${fileExtension}`, function () {
+        download.execute(fileURL, location, fileName, fileExtension, function () {
             message.channel.send(`Upload completed, the name is **${fileName}**`);
             console.log(`new file uploaded, the name is ${fileName}.${fileExtension}`);
         })
