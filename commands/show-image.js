@@ -44,11 +44,19 @@ module.exports = {
             message.channel.send(embed);
         // otherwise, loop through our list of images, and return names of those with similar names
         } else {
-            message.channel.send('There were no images matching the name provided. Did you mean any of these: ');
-            var searchLetters = fileName.substring(0, 3);
-            for (i = 0; i < files.length; i++) {
-                if (files[i].match(searchLetters)) {
+            if (filename.trim() == ""){
+                for (i = 0; i < files.length; i++) {
                     message.channel.send(`**${filesNoExtensions[i]}**`);
+                }
+            } 
+            else {
+
+                message.channel.send('There were no images matching the name provided. Did you mean any of these: ');
+                var searchLetters = fileName.substring(0, 3);
+                for (i = 0; i < files.length; i++) {
+                    if (files[i].match(searchLetters)) {
+                        message.channel.send(`**${filesNoExtensions[i]}**`);
+                    }
                 }
             }
         }
