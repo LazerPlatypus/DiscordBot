@@ -5,7 +5,6 @@ module.exports = {
     'SpellName | School of Magic | Class | Level | Casting Time | Range | Components | Duration | Notes/Flavor Text | Higher Levels | Source\\n' + 
     'newlines are replaced with ~',    
     execute(filename) {
-        var test = "firstline | nextline"
         const fs = require('fs'); // loads filesystem
         var fileContents = fs.readFileSync(filename).toString();
         var spellData = fileContents.split('\n');

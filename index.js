@@ -39,7 +39,7 @@ client.on('message', async message => {
     const command = args.shift().toLowerCase();
     // exits the method if the command doesn't exist in our collection of commands
     if(!client.commands.has(command)) return;
-    
+
     // attempts to run the command
     try {
         client.commands.get(command).execute(message, args);

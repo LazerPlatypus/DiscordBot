@@ -1,6 +1,6 @@
-Adult Brass Dragon
-Adult White Dragon
-Nalfeshnee
-Rakshasa
-Storm Giant
-Vampire
+Adult Brass Dragon_15d12+75
+Adult White Dragon_16d12+96
+Nalfeshnee_16d10+96
+Rakshasa_13d8+52
+Storm Giant_20d12+100
+Vampire_17d8+68

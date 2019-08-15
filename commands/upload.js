@@ -31,7 +31,7 @@ module.exports = {
         // make the name of the file by concating all the args together with escaped spaces
         var fileName = args.join('\ ');
 
-        if (fileName.match('\.')) {
+        if (fileName.match('.')) {
             message.channel.send('the filename cannot contain a .');
             return;
         }

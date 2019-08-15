@@ -1,4 +1,4 @@
-Adult Gold Dragon
-Adult Red Dragon
-Androsphinx
-Dragon Turtle
+Adult Gold Dragon_19d12+133
+Adult Red Dragon_19d12+133
+Androsphinx_19d10+95
+Dragon Turtle_22d20+10

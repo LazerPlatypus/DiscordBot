@@ -1,25 +1,25 @@
-Air Elemental
-Barbed Devil
-Bulette
-Earth Elemental
-Fire Elemental
-Flesh Golem 
-Giant Crocodile
-Giant Shark
-Glasiator
-Gorgon
-Half-Red Dragon Veteran
-Hill Giant
-Night Hag
-Otyugh
-Roper
-Salamander
-Shambling Mound
-Triceratops
-Troll
-Unicorn
-Vampire Spawn
-Water Elemental
-Werebear
-Wraith
-Xorn
+Air Elemental_12d10+24
+Barbed Devil_13d8+52
+Bulette_9d10+45
+Earth Elemental_12d10+60
+Fire Elemental_12d10+30
+Flesh Golem_11d8+44
+Giant Crocodile_9d12+27
+Giant Shark_11d12+55
+Glasiator_15d8+45
+Gorgon_12d10+48
+Half-Red Dragon Veteran_1d2+64
+Hill Giant_10d12+40
+Night Hag_15d8+45
+Otyugh_12d10+48
+Roper_11d10+33
+Salamander_12d10+24
+Shambling Mound_16d10+48
+Triceratops_10d12+30
+Troll_8d10+40
+Unicorn_9d10+18
+Vampire Spawn_11d8+33
+Water Elemental_12d10+48
+Werebear_18d8+54
+Wraith_9d8+27
+Xorn_7d8+42

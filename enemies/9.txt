@@ -1,8 +1,8 @@
-Bone Devil
-Clay Golem
-Cloud Giant
-Fire Giant
-Glabrezu
-Treant
-Young Blue Dragon
-Young Silver Dragon
+Bone Devil_15d10+60
+Clay Golem_14d10+56
+Cloud Giant_16d12+96
+Fire Giant_13d12+78
+Glabrezu_15d10+75
+Treant_12d12+60
+Young Blue Dragon_16d10+64
+Young Silver Dragon_16d10+80

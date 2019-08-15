@@ -1,10 +1,10 @@
-Chimera
-Drider
-Invisible Stalker
-Mage
-Mammoth
-Medusa
-Vrock
-Wyvern
-Young Bronze Dragon
-Young White Dragon
+Chimera_12d10+48
+Drider_13d10+52
+Invisible Stalker_16d8+32
+Mage_9d8
+Mammoth_11d12+55
+Medusa_17d8+51
+Vrock_11d10+44
+Wyvern_13d10+39
+Young Bronze Dragon_13d10+39
+Young White Dragon_14d10+56

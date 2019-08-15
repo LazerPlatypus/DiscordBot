@@ -1,6 +1,6 @@
-Giant Ape
-Oni
-Shield Gaurdian
-Stone Giant
-Young Black Dragon
-Young Copper Dragon
+Giant Ape_15d12+60
+Oni_13d10+39
+Shield Gaurdian_15d10+60
+Stone Giant_11d12+55
+Young Black Dragon_15d10+45
+Young Copper Dragon_14d10+42

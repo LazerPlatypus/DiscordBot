@@ -1,6 +1,6 @@
-Aboleth
-Deva
-Gaurdian Naga
-Stone Golem
-Young Gold Dragon
-Young Red Dragon
+Aboleth_18d10+36
+Deva_16d8+64
+Gaurdian Naga_15d10+48
+Stone Golem_17d10+85
+Young Gold Dragon_17d10+85
+Young Red Dragon_17d10+85
