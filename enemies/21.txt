@@ -1,4 +1,4 @@
-Ancient Black Dragon
-Ancient Copper Dragon
-Lich
-Solar
+Ancient Black Dragon_21d20+147
+Ancient Copper Dragon_20d20+140
+Lich_18d8+54
+Solar_18d10+144

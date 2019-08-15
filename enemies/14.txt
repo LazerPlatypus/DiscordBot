@@ -1,2 +1,3 @@
-Adult Black Dragon
-Adult Copper Dragon
+Adult Black Dragon_17d12+85
+Adult Copper Dragon_16d12+80
+Ice Devil_19d10+76

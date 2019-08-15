@@ -1,7 +1,7 @@
-Behir
-Djinni
-Efreeti
-Gyosphinx
-Horned Devil
-Remorhaz
-Roc
+Behir_16d12+64
+Djinni_14d10+84
+Efreeti_16d10+112
+Gyosphinx_16d10+48
+Horned Devil_17d10+85
+Remorhaz_17d12+85
+Roc_16d20+80

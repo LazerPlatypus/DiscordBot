@@ -1,5 +1,5 @@
-Adult Blue Dragon
-Adult Silver Dragon
-Iron Golem
-Marilith
-Planetar
+Adult Blue Dragon_18d12+108
+Adult Silver Dragon_18d12+129
+Iron Golem_20d10+100
+Marilith_18d10+90
+Planetar_16d10+112

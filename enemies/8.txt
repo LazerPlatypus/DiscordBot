@@ -1,10 +1,10 @@
-Assassin
-Chain Devil
-Cloaker
-Frost Giant
-Hezrou
-Hydra
-Spirit Naga
-Tyrannosaurus Rex
-Young Bronze Dragon
-Young Green Dragon
+Assassin_14d10+42
+Chain Devil_10d8+40
+Cloaker_12d10+12
+Frost Giant_12d12+60
+Hezrou_13d10+65
+Hydra_15d12+75
+Spirit Naga_10d10+20
+Tyrannosaurus Rex_13d12+52
+Young Bronze Dragon_15d10+60
+Young Green Dragon_16d10+48

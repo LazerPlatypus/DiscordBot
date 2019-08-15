@@ -1,4 +1,4 @@
-Adult Bronze Dragon
-Adult Green Dragon
-Mummy Lord
-Purple Worm
+Adult Bronze Dragon_17d12+102
+Adult Green Dragon_18d12+90
+Mummy Lord_13d8+39
+Purple Worm_15d20+90

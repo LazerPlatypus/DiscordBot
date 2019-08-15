@@ -1,12 +1,12 @@
-Black Pudding
-Chuul
-Coutal
-Elephant
-Ettin
-Ghost
-Incubus
-Lamia
-Red Dragon Wyrmling
-Succubus
-Wereboar
-Weretiger
+Black Pudding_10d10+30
+Chuul_11d10+33
+Coutal_13d8+39
+Elephant_8d12+24
+Ettin_10d10+30
+Ghost_10d8
+Incubus_12d8+12
+Lamia_13d10+26
+Red Dragon Wyrmling_10d8+30
+Succubus_12d8+12
+Wereboar_12d8+12
+Weretiger_16d8+48
