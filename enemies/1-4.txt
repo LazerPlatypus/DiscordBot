@@ -1,32 +1,32 @@
-Acolyte
-Axe Beak
-Blink Dog
-Boar
-Constrictor Snake
-Draft Horse
-Dretch
-Drow
-Elk
-Flying Sword
-Giant Badger
-Giant Bat
-Giant Centipede
-Giant Frog
-Giant Lizard
-Giant Owl
-Giant Venomous Snake
-Giant Wolf Spider
-Goblin
-Grimlock
-Panther
-Psuedodragon
-Riding Horse
-Skeleton
-Sprite
-Steam Mephit
-Swarm of Rats
-Swarm of Bats
-Swarm of Ravens
-Violet Fungus
-Wolf
-Zombie
+Acolyte_2d8
+Axe Beak_3d10+3
+Blink Dog_4d8+4
+Boar_2d8+2
+Constrictor Snake_2d10+2
+Draft Horse_3d10+3
+Dretch_4d6+4
+Drow_3d8
+Elk_2d10+2
+Flying Sword_5d6
+Giant Badger_2d8+4
+Giant Bat_4d10
+Giant Centipede_1d6+1
+Giant Frog_4d8
+Giant Lizard_3d10+3
+Giant Owl_3d10+3
+Giant Venomous Snake_2d8+2
+Giant Wolf Spider_2d8+2
+Goblin_2d6
+Grimlock_3d8+2
+Panther_3d8
+Psuedodragon_2d4+2
+Riding Horse_2d10+2
+Skeleton_2d8+4
+Sprite_1d4
+Steam Mephit_6d6
+Swarm of Rats_7d8-7
+Swarm of Bats_5d8
+Swarm of Ravens_7d8-7
+Violet Fungus_4d8
+Wolf_2d8+2
+Zombie_3d8+9
