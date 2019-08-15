@@ -15,11 +15,6 @@ for (const file of commandFiles) {
 
 // tells us the bot is ready
 client.once('ready', () => {
-    const c = new Discord.Collection;
-    for (const file of commandFiles) {
-        const cc = require(`./commands/${file}`);
-        console.log(cc.description);
-    }
     console.log('Ready');
 })
 
