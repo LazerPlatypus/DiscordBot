@@ -29,9 +29,10 @@ module.exports = {
         var fileURL = Attachment[0].url; // gets the url of the first attachments
 
         // make the name of the file by concating all the args together with escaped spaces
-        var fileName = args.join('\ ');
+        var fileName = args.join('\\ ');
 
-        if (fileName.match('.')) {
+        if (fileName.match('\\.')) {
+            message.channel.send(fileName);
             message.channel.send('the filename cannot contain a .');
             return;
         }
