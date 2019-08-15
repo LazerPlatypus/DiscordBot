@@ -1,0 +1,29 @@
+Awakened Shrub_3d6
+Baboon_1d6
+Badger_1d4+1
+Bat_1d4-1
+Cat_1d4
+Commoner_1d8
+Crab_1d4
+Deer_1d8
+Eagle_1d6
+Frog_1d4-1
+Giant Fire Beetle_1d6+1
+Goat_1d8
+Hawk_1d4-1
+Homonculus_2d4
+Hyena_1d8+1
+Jackal_1d6
+Lemure_3d8
+Lizard_1d4
+Octopus_1d6
+Owl_1d4-1
+Quipper_1d4-1
+Rat_1d4-1
+Raven_1d4-1
+Scorpion_1d4-1
+Sea horse_1d4-1
+Shrieker_3d8
+Spider_1d4-1
+Vulture_1d8
+Weasel_1d4-1
