@@ -3,8 +3,8 @@ module.exports = {
     description: 'user types in the name of an existing spell,' +
     'and this method returns all the information about the spell',
     execute(message, args) {
-        const sp = require('..\\helperMethods\\spellFileParser.js');
-        var spellData = sp.execute('spell_list.txt');
+        const sp = require('..\\helperMethods\\fileParser.js');
+        var spellData = sp.execute('spell_list.txt', 10);
         var userSpellName = args.join(' ').trim().toUpperCase();
         var found = false;
         for (i = 0; i < spellData.length && !found; i++) {
