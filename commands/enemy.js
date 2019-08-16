@@ -13,17 +13,13 @@ module.exports = {
         var enemyarray = rawenemy.split("_");
         enemyname = enemyarray[0]
         rawhealth = enemyarray[1]
-        if(rawhealth.includes("-")){
-            var healtharray = rawhealth.split("-")
-        }
-        if(rawhealth.includes("+")){
-            var healtharray = rawhealth.split("+")
-        }
+        var healtharray = rawhealth.split("+")
         dicevalue = healtharray[0]
         addvalue = healtharray[1]
         var dicearray = dicevalue.split("d")
         amount = dicearray[0]
         size = dicearray[1]
+        roll = 0
         for(i = 0; i < amount; i++){
             if(size == "20"){
                 rolledamount = ((Math.floor(Math.random() * 20) + 1));
