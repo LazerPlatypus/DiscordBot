@@ -51,8 +51,9 @@ module.exports = {
             }
         }
         health = roll
-        addvalue = 0 + addvalue
-        finalhp = health + addvalue
+        var integera = parseInt(addvalue, 10);
+        addhp = integera
+        finalhp = health + addhp
 
         if(true){
             message.channel.send(`A(n) ${enemyname} appears with ${finalhp} health points!`);
