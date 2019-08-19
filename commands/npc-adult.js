@@ -1,6 +1,11 @@
 module.exports = {
     name: 'npc-adult',
     description: 'generates a random adult npc',
+    aliases: [],
+    guildOnly: false,
+    args: false,
+    cooldown: true,
+    cooldowntime: 5,
     execute(message, args) {
 
         const fs = require('fs'); // loads filesystem

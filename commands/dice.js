@@ -1,6 +1,10 @@
 module.exports = {
     name: 'dice',
     description: 'allows the user to roll some dice',
+    aliases: ['roll'],
+    guildOnly: true,
+    args: true,
+    cooldown: false,
     execute(message, args) {
     if (message.content.startsWith("!dice ")) {
         var dice = message.content.substr("!dice ".length);

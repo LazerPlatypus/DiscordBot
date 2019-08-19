@@ -1,6 +1,10 @@
 module.exports = {
     name: 'enemy',
     description: 'generates a enemy based on difficulty',
+    aliases: [],
+    guildOnly: false,
+    args: true,
+    cooldDown: false,
     execute(message, args) {
     if(message.content.startsWith("!enemy ")){
         var dice = message.content.substr("!enemy ".length);

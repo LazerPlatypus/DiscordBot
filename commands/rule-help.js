@@ -1,6 +1,11 @@
 module.exports = {
     name: 'rule-help',
     description: 'returns the Offical D&D 5E ruling on commonly missed rules',
+    aliases: ['rulehelp', 'rh'],
+    guildOnly: true,
+    args: true,
+    usage: '<rule name>',
+    cooldown: false,
     execute(message, args) {
         const rp = require('..\\helperMethods\\fileParser.js');
         var ruleData = rp.execute('rule_list.txt', 4);

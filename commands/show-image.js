@@ -1,6 +1,11 @@
 module.exports = {
     name: 'show-image',
     description: 'displays an image that has been previously uploaded',
+    aliases: [],
+    guildOnly: true,
+    args: true,
+    usage: '<image name>',
+    cooldown: false,
     execute(message, args) {
 
         // checks for the help identifier, doesn't run anything else if true.

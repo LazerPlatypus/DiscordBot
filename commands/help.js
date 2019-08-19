@@ -2,6 +2,11 @@ module.exports = {
 
     name: 'help',
     description: 'gets the user a list of the commands and their descriptions',
+    aliases: ['?'],
+    guildOnly: false,
+    args: false,
+    cooldown: true,
+    cooldowntime: 10,
     
     execute(message, args){
         // load dependencies

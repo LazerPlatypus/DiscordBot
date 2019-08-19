@@ -2,6 +2,11 @@ module.exports = {
     name: 'spell-help',
     description: 'user types in the name of an existing spell,' +
     'and this method returns all the information about the spell',
+    aliases: [],
+    guildOnly: true,
+    args: true,
+    usage: '<spell name>',
+    cooldown: false,
     execute(message, args) {
         const sp = require('..\\helperMethods\\fileParser.js');
         var spellData = sp.execute('spell_list.txt', 10);

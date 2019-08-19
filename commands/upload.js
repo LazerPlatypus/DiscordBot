@@ -2,6 +2,11 @@ module.exports = {
     name: 'upload',
     description: 'allows the user to upload files to the upload folder' +
     'from inside discord',
+    aliases: [],
+    guildOnly: true,
+    args: true,
+    usage: '<new file name>',
+    cooldown: false,
     execute(message, args) {
         // load dependencies
         const Discord = require('discord.js'); // gets the discord api running

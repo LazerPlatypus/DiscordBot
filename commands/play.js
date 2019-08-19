@@ -1,6 +1,11 @@
 module.exports = {
 	name: 'play',
-    description: 'Plays the audio file specified as the arguement',
+	description: 'Plays the audio file specified as the arguement',
+	aliases: ['sound'],
+	guildOnly: true,
+	args: true,
+	usage: '<file name>',
+	cooldown: false,
 	async execute(message, args) {
 		var voiceChannel = message.member.voiceChannel;
 		if(!voiceChannel) {

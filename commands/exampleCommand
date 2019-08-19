@@ -1,0 +1,10 @@
+module.exports = {
+    name: <string, required>,
+    description: <string, required>,
+    aliases: <string[], not requried>,
+    guildOnly: <bool, required>,
+    args: <bool, required>,
+    usage: <string, not required>,
+    cooldown: <bool, required>,
+    cooldowntime: <int, required if cooldown is true>
+}

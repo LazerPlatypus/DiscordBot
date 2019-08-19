@@ -5,7 +5,10 @@ const { prefix, token } = require('./config.json'); // loads our config file
 const client = new Discord.Client(); // makes the client
 client.commands = new Discord.Collection(); // makes a collection for our commands to go in
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js')); // gets our commands by their name
+const cooldowns = new Discord.Collection();
 var guildConf = require('./prefixes.json');
+
+
 
 // populates the collection of commands using the filenames
 for (const file of commandFiles) {
@@ -36,13 +39,56 @@ client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
 
     // makes the command name lowercase
-    const command = args.shift().toLowerCase();
-    // exits the method if the command doesn't exist in our collection of commands
-    if(!client.commands.has(command)) return;
+    const commandName = args.shift().toLowerCase();
+
+    // exits the method if the command or its aliases doesn't exist in our collection of commands
+    const command = client.commands.get(commandName) 
+    || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
+    if (!command) return;
+
+
+    // checks if the command can only be used in a server
+    if (command.guildOnly && message.channel.type !== 'text') {
+        message.reply('I can\'t execute that command inside DMs');
+        return;
+    }
+
+    // checks if the commands needs arguments
+    if (command.args && !args.length) {
+        let reply = (`You didn't provide any arguments when they were expected expected!`);
+        if (command.usage) {
+            reply += `\nThe proper usage would be ${prefix}${command.name} ${command.usage}`;
+        }
+        message.reply(reply);
+        return;
+    }
+
+    // checks if the command has a cooldown
+    const now = Date.now();
+    if (command.cooldown && !cooldowns.has(command.name)) {
+        cooldowns.set(command.name, new Discord.Collection());
+        const timestamps = cooldowns.get(command.name);
+        const cooldownAmount = (command.cooldowntime || 3) * 1000;
+        if (timestamps.has(message.author.id)) {
+            const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
+    
+            if (now < expirationTime) {
+                const timeLeft = (expirationTime - now) / 1000;
+                message.reply(`please wait ${timeLeft.toFixed(1)} more second${timeLeft>1?'s':''} before reusing the ${command.name} command.`);
+                return;
+            }
+        }
+        timestamps.set(message.author.id, now);
+        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
+    }
+
+
 
     // attempts to run the command
     try {
-        client.commands.get(command).execute(message, args);
+        command.execute(message, args);
     } catch (error) {
         console.error(error);
         message.reply('there was an error trying to execute your command')
