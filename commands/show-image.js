@@ -44,7 +44,7 @@ module.exports = {
             message.channel.send(embed);
         // otherwise, loop through our list of images, and return names of those with similar names
         } else {
-            if (filename.trim() == ""){
+            if (fileName.trim() == ""){
                 for (i = 0; i < files.length; i++) {
                     message.channel.send(`**${filesNoExtensions[i]}**`);
                 }
