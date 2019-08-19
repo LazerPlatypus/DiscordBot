@@ -6,5 +6,8 @@ module.exports = {
     args: <bool, required>,
     usage: <string, not required>,
     cooldown: <bool, required>,
-    cooldowntime: <int, required if cooldown is true>
-}
+    cooldowntime: <int, required if cooldown is true>,
+    execute(message, args) {
+
+    },
+};
