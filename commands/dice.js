@@ -73,6 +73,16 @@ module.exports = {
                 }
                 roll = roll + rolledamount;
             }
+            if(size == "d6"){
+                rolledamount = ((Math.floor(Math.random() * 6) + 1));
+                if(rolledamount == 6){
+                    critsuccess++
+                }
+                if(rolledamount == 1){
+                    critfail++
+                }
+                roll = roll + rolledamount;
+            }
             if(size == "d4"){
                 rolledamount = ((Math.floor(Math.random() * 4) + 1));
                 if(rolledamount == 4){
