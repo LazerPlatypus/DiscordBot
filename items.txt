@@ -1,0 +1,179 @@
+#'masterWorkQuality | itemName | effects | itemType | rangeType | subtype | armorClass | damageDice | description | Scale'
+
+
+
+1|Greatsword of Flame|Flame Tongue|Greatsword|M|weapon||2d6|You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword.|7
+
+2|Sentinels Plate Mail||Plate_Mail||armor|8||This set of plate was forged by a master craftsman long ago|5
+
+2|Masterwork Club||Club|M|weapon||1d6|UngaBunga Barabarian Club|5
+
+ |1 Gold||Gold|||item|||1 Gold Piece|4
+
+ |2 Gold||Gold|||item|||2 Gold Pieces|4
+
+ |3 Gold||Gold|||item|||3 Gold Pieces|4
+
+ |5 Gold||Gold|||item|||5 Gold Pieces|4
+
+ |7 Gold||Gold|||item|||7 Gold Pieces|4
+
+ |10 Gold||Gold|||item|||10 Gold Pieces|5
+
+ |20 Gold||Gold|||item|||20 Gold Pieces|5
+
+ |25 Gold||Gold|||item|||25 Gold Pieces|5
+
+ |30 Gold||Gold|||item|||30 Gold Pieces|5
+
+ |40 Gold||Gold|||item|||40 Gold Pieces|6
+
+ |42 Gold||Gold|||item|||42 Gold Pieces|6
+
+ |50 Gold||Gold|||item|||50 Gold Pieces|6
+
+ |60 Gold||Gold|||item|||60 Gold Pieces|7
+
+ |66 Gold||Gold|||item|||66 Gold Pieces|7
+
+ |70 Gold||Gold|||item|||70 Gold Pieces|7
+
+ |80 Gold||Gold|||item|||80 Gold Pieces|7
+
+ |90 Gold||Gold|||item|||90 Gold Pieces|8
+
+ |100 Gold||Gold|||item|||100 Gold Pieces|8
+
+ |101 Gold||Gold|||item|||101 Gold Pieces|8
+
+ |1 Platinum|Platinum|||item|||1 Platium Piece|7
+
+ |2 Platinum|Platinum|||item|||2 Platium Pieces|7
+
+ |3 Platinum|Platinum|||item|||3 Platium Pieces|7
+
+ |5 Platinum|Platinum|||item|||5 Platium Pieces|7
+
+ |7 Platinum|Platinum|||item|||7 Platium Pieces|7
+
+ |10 Platinum|Platinum|||item|||10 Platium Pieces|8
+
+ |11 Platinum|Platinum|||item|||11 Platium Pieces|8
+
+ |12 Platinum|Platinum|||item|||12 Platium Pieces|9
+
+ |15 Platinum|Platinum|||item|||15 Platium Pieces|9
+
+ |17 Platinum|Platinum|||item|||17 Platium Pieces|10
+
+ |18 Platinum|Platinum|||item|||18 Platium Pieces|10
+
+ |19 Platinum|Platinum|||item|||19 Platium Pieces|10
+
+ |20 Platinum|Platinum|||item|||20 Platium Pieces|10
+
+ |20 Platinum|Platinum|||item|||20 Platium Pieces|11
+
+ |25 Platinum|Platinum|||item|||25 Platium Pieces|11
+
+ |30 Platinum|Platinum|||item|||30 Platium Pieces|11
+
+ |35 Platinum|Platinum|||item|||35 Platium Pieces|11
+
+ |40 Platinum|Platinum|||item|||40 Platium Pieces|11
+
+ |45 Platinum|Platinum|||item|||45 Platium Pieces|12
+
+ |50 Platinum|Platinum|||item|||50 Platium Pieces|12
+
+ |60 Platinum|Platinum|||item|||60 Platium Pieces|12
+
+ |70 Platinum|Platinum|||item|||70 Platium Pieces|12
+
+ |80 Platinum|Platinum|||item|||80 Platium Pieces|13
+
+ |90 Platinum|Platinum|||item|||90 Platium Pieces|13
+
+ |100 Platinum|Platinum|||item|||100 Platium Pieces|13
+
+ |110 Platinum|Platinum|||item|||110 Platium Pieces|14
+
+ |120 Platinum|Platinum|||item|||120 Platium Pieces|14
+
+ |130 Platinum|Platinum|||item|||130 Platium Pieces|14
+
+ |140 Platinum|Platinum|||item|||140 Platium Pieces|14
+
+ |150 Platinum|Platinum|||item|||150 Platium Pieces|15
+
+ |160 Platinum|Platinum|||item|||160 Platium Pieces|15
+
+ |170 Platinum|Platinum|||item|||170 Platium Pieces|15
+
+ |180 Platinum|Platinum|||item|||180 Platium Pieces|15
+
+ |190 Platinum|Platinum|||item|||190 Platium Pieces|15
+
+ |200 Platinum|Platinum|||item|||200 Platium Pieces|16
+
+ |220 Platinum|Platinum|||item|||220 Platium Pieces|16
+
+ |225 Platinum|Platinum|||item|||225 Platium Pieces|16
+
+ |240 Platinum|Platinum|||item|||240 Platium Pieces|16
+
+ |250 Platinum|Platinum|||item|||250 Platium Pieces|16
+
+ |260 Platinum|Platinum|||item|||260 Platium Pieces|16
+
+ |280 Platinum|Platinum|||item|||280 Platium Pieces|16
+
+ |300 Platinum|Platinum|||item|||300 Platium Pieces|17
+
+ |350 Platinum|Platinum|||item|||350 Platium Pieces|17
+
+ |400 Platinum|Platinum|||item|||400 Platium Pieces|17
+
+ |500 Platinum|Platinum|||item|||500 Platium Pieces|17
+
+ |600 Platinum|Platinum|||item|||600 Platium Pieces|18
+
+ |700 Platinum|Platinum|||item|||700 Platium Pieces|18
+
+ |800 Platinum|Platinum|||item|||800 Platium Pieces|18
+
+ |900 Platinum|Platinum|||item|||900 Platium Pieces|18
+
+ |1000 Platinum|Platinum|||item|||1000 Platium Pieces|19
+
+ |1250 Platinum|Platinum|||item|||1250 Platium Pieces|19
+
+ |1500 Platinum|Platinum|||item|||1500 Platium Pieces|19
+
+ |1750 Platinum|Platinum|||item|||1750 Platium Pieces|19
+
+ |2000 Platinum|Platinum|||item|||2000 Platium Pieces|20
+
+ |3000 Platinum|Platinum|||item|||3000 Platium Pieces|20
+
+ |4000 Platinum|Platinum|||item|||4000 Platium Pieces|20
+
+ |5000 Platinum|Platinum|||item|||5000 Platium Pieces|20
+
+ |1 Silver||Silver|||item|||1 Silver Piece|2
+
+ |6 Silver||Silver|||item|||6 Silver Pieces|3
+ 
+ |3 Silver||Silver|||item|||3 Silver Pieces|2
+
+ |3 Copper||Copper|||item|||3 Copper Pieces|1
+
+ |1 Copper||Copper|||item|||1 Copper Piece|1
+
+ |2 Copper||Copper|||item|||2 Copper Pieces|1
+
+ |5 Copper||Copper|||item|||5 Copper Pieces|1
+
+ |7 Copper||Copper|||item|||7 Copper Pieces|1
+
+ |10 Copper||Copper|||item|||10 Copper Pieces|1
