@@ -7,6 +7,15 @@ module.exports = {
 	usage: '<file name>',
 	cooldown: false,
 	async execute(message, args) {
+
+		if (args[0] == '?') {
+			message.channel.send('Plays an audio file with the given name.\n'
+			+'If the audio file cannot be found, this will return audio files with similar names, if there are any.\n'
+			+'usage: !play <name of audio file> (no extension needed)\n'
+			+'Note: you must be in an audio channel for this command to work');
+			return;
+		}
+
 		// load dependencies
 		const fs = require('fs'); // loads filesystem
 		const Discord = require('discord.js');

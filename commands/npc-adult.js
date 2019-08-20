@@ -1,13 +1,21 @@
 module.exports = {
     name: 'npc-adult',
     description: 'generates a random adult npc',
-    aliases: [],
+    aliases: ['adult'],
     guildOnly: false,
     args: false,
     cooldown: true,
     cooldowntime: 5,
     execute(message, args) {
 
+        if (args[0] == '?') {
+            message.channel.send('this command generates an NPC with a name, and health points.'
+            +' the NPC could be commoner, or an adventurer (meaning it has SDCIWC scores)\n'
+            +'usage: !npc-adult (no args needed)');
+            return;
+        }
+
+        const Discord = require('discord.js');
         const fs = require('fs'); // loads filesystem
         const rf = require('..\\helperMethods\\readFile.js'); //loads the file reader method in the helpermethods folder
         isAdventurer = false;
@@ -72,21 +80,24 @@ module.exports = {
         lastname = rf.execute("lnames.txt");
         race = rf.execute("races.txt");
         //prints out to the console, or in this case the chat
+        let embed = new Discord.RichEmbed;
+        embed.setColor(0x0099ff);
+        embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
         if(isAdventurer){
-            message.channel.send(`A(n) ${race} Adventurer appears! Their name is ${firstname} ${lastname}\n
+            embed.addField('NPC Generator',`A(n) ${race} Adventurer appears! Their name is ${firstname} ${lastname}\n
             Str: ${str}\n
             Dex: ${dex}\n
             Int: ${int}\n
             Con: ${con}\n
             Wis: ${wis}\n
             Cha: ${cha}\n
-            They are a ${npcclass} and are ${Age} years old\n
-            Level: ${advLevel} , Health: ${advHealth}`
+            They are a ${npcclass} and are ${Age} years old
+            Level: ${advLevel} , Health: ${advHealth}`, false
             );
+        } else {
+            embed.addField('NPC Generator',`A regular ${race} appears!\n Their name is ${firstname} ${lastname}\n
+            They are a ${npcjob} and are ${Age} years old, they also have ${npcHealth} health points.`, false);
         }
-        if(!isAdventurer){
-            message.channel.send(`A regular ${race} appears!\n Their name is ${firstname} ${lastname}\n
-            They are a ${npcjob} and are ${Age} years old, they also have ${npcHealth} health points.`);
-        }
+        message.channel.send(embed);
     },
 };

@@ -7,13 +7,27 @@ module.exports = {
     usage: '<rule name>',
     cooldown: false,
     execute(message, args) {
+
+        if (args[0] == '?') {
+            message.channel.send('This command returns the official d&d ruling on a specified topic\n'
+            +'If I cannot find the topic you entered, I will return topics with similar names, if any exist\n'
+            +'usage: !rule-help <name of rule/topic>');
+            return;
+        }
+
+        const Discord = require('discord.js');
         const rp = require('..\\helperMethods\\fileParser.js');
         var ruleData = rp.execute('rule_list.txt', 4);
         var ruleName = args.join(' ').trim().toUpperCase();
         var found = false;
+
+        let embed = new Discord.RichEmbed;
+        embed.setColor(0x0099ff);
+        embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
         for (i = 0; i < ruleData.length && !found; i++) {
             if (ruleData[i][0].toUpperCase() == ruleName) {
-                message.channel.send(`__**${ruleData[i][0]}**__\n\n${ruleData[i][1]}\n${ruleData[i][2]}\n\nSource: ${ruleData[i][3]}`);
+                embed.setTitle(`${ruleData[i][0]}`);
+                embed.setDescription(`${ruleData[i][1]}\n\n${ruleData[i][2]!=""?ruleData[i][2]+'\n\n':""}Source: ${ruleData[i][3]}`);
                 found = true;
             }
         }
@@ -30,17 +44,20 @@ module.exports = {
                 this.execute(message, ruleData[matches[1]][0].split(' '));
             }
             else {
-                message.channel.send('I couldn\'t find a rule with that name.')
+                embed.addField('I couldn\'t find a rule with that name.','\u200B', true);
                 for (i = 0; i < ruleData.length; i++) {
                     if (ruleData[i][0].toUpperCase().includes(ruleName.substring(0, 3))) {
                         if (!found) {
-                            message.channel.send('Were you looking for one of these?');
+                            embed.addField('\u200B','_Were you looking for one of these?_', false);
                             found = true;
                         }
-                        message.channel.send(`**${ruleData[i][0]}**`);
+                        embed.addField('\u200B',`**${ruleData[i][0]}**`);
                     }
                 }
             }
+        }
+        if (embed.fields != undefined && embed.fields.length > 0 || embed.title != undefined) {
+            message.channel.send(embed);
         }
     },
 };

@@ -6,11 +6,19 @@ module.exports = {
     args: true,
     cooldown: false,
     execute(message, args) {
-    if (message.content.startsWith("!dice ")) {
-        var dice = message.content.substr("!dice ".length);
-        var darray = dice.split(" ");
-        amount = darray[0];
-        size = darray[1];
+    const Discord = require('discord.js');
+    // if (message.content.startsWith("!dice ")) {
+        // var dice = message.content.substr("!dice ".length);
+        // var darray = dice.split(" ");
+        if (args[0] == '?') {
+            message.channel.send('returns the sum of rolling a specific number of dice\n'
+            +'this command will also declare how many of those dice rolled critical failures or successes\n'
+            +'usage: <number of dice> <type of die>\n'
+            +'supported die types are: d2, d4, d6, d8, d10, d12, d20, and d100');
+            return;
+        }
+        amount = args[0];
+        size = args[1];
         roll = 0
         critsuccess = 0
         critfail = 0
@@ -86,26 +94,35 @@ module.exports = {
                 roll = roll + rolledamount;
             }
         }
-    }
 
 
         
+        let embed = new Discord.RichEmbed;
+        embed.setColor(0x0099ff);
+        embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
         if(amount == 1 && critsuccess > 0){
-            message.channel.send(`You have rolled a ${size} and got a Critical Success with a roll of ${roll}`);
+            embed.addField('Dice', `You have rolled a ${size} and got a Critical Success with a roll of ${roll}`, true);
+            // message.channel.send(`You have rolled a ${size} and got a Critical Success with a roll of ${roll}`);
         }
-        else if(amount == 1 && critfail > 0){
-            message.channel.send(`You have rolled a ${size} and got a Critical Failure with a roll of ${roll}`);
+        else
+         if(amount == 1 && critfail > 0){
+            embed.addField('Dice', `You have rolled a ${size} and got a Critical Failure with a roll of ${roll}`, true);
+            // message.channel.send(`You have rolled a ${size} and got a Critical Failure with a roll of ${roll}`);
         }
         else if(amount == 1){
-            message.channel.send(`You have rolled a ${size} and got a ${roll}`);
-
+            embed.addField('Dice',`You have rolled a ${size} and got a ${roll}`, true);
+            // message.channel.send(`You have rolled a ${size} and got a ${roll}`);
         }
         else if(amount > 1){
-            message.channel.send(`You have rolled ${amount} ${size} and got a total of ${roll}\n
-            there was ${critsuccess} crits and ${critfail} critical failures.`);
+            embed.addField('Dice',`You have rolled ${amount} ${size} and got a total of ${roll}\n
+            there was ${critsuccess} crits and ${critfail} critical failures.`, false);
+            // message.channel.send(`You have rolled ${amount} ${size} and got a total of ${roll}\n
+            // there was ${critsuccess} crits and ${critfail} critical failures.`);
         }
         else{
-            message.channel.send(`Make sure that your command follows the rules (!dice "amount" d"size")`);
+            embed.addField('Error',`Make sure that your command follows the rules (!dice "amount" d"size")`, true);
+            // message.channel.send(`Make sure that your command follows the rules (!dice "amount" d"size")`);
         }
+        message.channel.send(embed);
     },
 };
