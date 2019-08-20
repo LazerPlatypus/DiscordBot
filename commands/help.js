@@ -1,7 +1,7 @@
 module.exports = {
 
     name: 'help',
-    description: 'gets the user a list of the commands and their descriptions',
+    description: 'DMs the user a list of the commands and their descriptions',
     aliases: ['?'],
     guildOnly: false,
     args: false,

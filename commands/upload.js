@@ -1,7 +1,6 @@
 module.exports = {
     name: 'upload',
-    description: 'allows the user to upload files to the upload folder' +
-    'from inside discord',
+    description: 'Allows the user to upload images to the bot',
     aliases: [],
     guildOnly: true,
     args: true,

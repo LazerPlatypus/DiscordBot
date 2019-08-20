@@ -1,6 +1,6 @@
 module.exports = {
     name: 'spell-help',
-    description: 'user types in the name of an existing spell,' +
+    description: 'User types in the name of an existing spell,' +
     'and this method returns all the information about the spell',
     aliases: [],
     guildOnly: true,

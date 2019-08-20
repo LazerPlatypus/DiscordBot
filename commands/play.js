@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'play',
-	description: 'Plays the audio file specified as the arguement',
+	description: 'Plays the audio when called with an existing audio file',
 	aliases: ['sound'],
 	guildOnly: true,
 	args: true,

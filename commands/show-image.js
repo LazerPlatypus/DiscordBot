@@ -1,7 +1,8 @@
 module.exports = {
     name: 'show-image',
-    description: 'displays an image that has been previously uploaded',
+    description: 'Displays an Img that has been uploaded before with its command, call the command by itself for a list',
     aliases: ['si', 'show'],
+
     guildOnly: true,
     args: false,
     usage: '<image name>',

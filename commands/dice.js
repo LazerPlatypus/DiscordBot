@@ -1,6 +1,6 @@
 module.exports = {
     name: 'dice',
-    description: 'allows the user to roll some dice',
+    description: 'Allows the user to roll dice. syntax: dice <ammount> d<type>',
     aliases: ['roll'],
     guildOnly: true,
     args: true,

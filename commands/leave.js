@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'leave',
-	description: 'Leaves the voice channel that the caller is currently in.',
+	description: 'Leaves the voice channel.',
 	aliases: [],
 	guildOnly: true,
 	args: false,

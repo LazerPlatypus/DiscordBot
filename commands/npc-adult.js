@@ -1,6 +1,6 @@
 module.exports = {
     name: 'npc-adult',
-    description: 'generates a random adult npc',
+    description: 'Generates a random adult npc',
     aliases: ['adult'],
     guildOnly: false,
     args: false,
