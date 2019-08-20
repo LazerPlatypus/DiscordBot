@@ -1,6 +1,6 @@
 module.exports = {
     name: 'enemy',
-    description: 'generates a enemy based on difficulty',
+    description: 'Generates a enemy based on difficulties 1/4, 1/2, 1/8, 1-20, and 21-24 and 30 ',
     aliases: [],
     guildOnly: false,
     args: true,
