@@ -7,18 +7,21 @@ module.exports = {
     usage: '<new file name>',
     cooldown: false,
     execute(message, args) {
-        // load dependencies
-        const Discord = require('discord.js'); // gets the discord api running
-        const fs = require('fs'); // loads the filesystem
-        const download = require('../helperMethods/download.js'); // gets the helper method this class needs
 
         // check for help, dont run any other code if true.
         if (args[0] == '?') {
             message.channel.send('This command allows for the uploading of images and sounds.\n' +
             'Sounds can be retrieved using the \'play\' command\n ' +
             'Images can be retrieved using the \'show-image\' command.\n' +
-            'usage: click the \'upload\' button, add the comment "!upload {desired name of file}", click send.')
+            'usage: click the \'upload\' button, add the comment "!upload {desired name of file}", click send.');
+            return;
         }
+
+        // load dependencies
+        const Discord = require('discord.js'); // gets the discord api running
+        const fs = require('fs'); // loads the filesystem
+        const download = require('../helperMethods/download.js'); // gets the helper method this class needs
+
 
         // currently discord only allows 1 attachment per message.
         // but we put the attachments in an array b/c it makes it easier to access
@@ -33,11 +36,11 @@ module.exports = {
         var fileURL = Attachment[0].url; // gets the url of the first attachments
 
         // make the name of the file by concating all the args together with escaped spaces
-        var fileName = args.join('\\ ');
+        var fileName = args.join(' ');
 
-        if (fileName.match('\\.')) {
+        if (fileName.match('[\\.?]')) {
             message.channel.send(fileName);
-            message.channel.send('the filename cannot contain a .');
+            message.channel.send('the filename cannot contain periods or question marks');
             return;
         }
 

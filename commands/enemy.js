@@ -1,19 +1,35 @@
 module.exports = {
     name: 'enemy',
     description: 'Generates a enemy based on difficulties 1/4, 1/2, 1/8, 1-20, and 21-24 and 30 ',
-    aliases: [],
+    aliases: ['npc-enemy'],
+
     guildOnly: false,
     args: true,
     cooldDown: false,
     execute(message, args) {
-    if(message.content.startsWith("!enemy ")){
-        var dice = message.content.substr("!enemy ".length);
-        var darray = dice.split(" ");
-        difficulty = darray[0];
-    }
+        const Discord = require('discord.js');
+    // if(message.content.startsWith("!enemy ")){
+    //     var dice = message.content.substr("!enemy ".length);
+    //     var darray = dice.split(" ");
+    //     difficulty = darray[0];
+    // }
+
+        if (args[0] == '?') {
+            message.channel.send('this command generated an enemy based on a CR\n'
+            +'usage: !enemy <desired cr>\n'
+            +'suppored CR are: 0, 1-8, 1-4, 1-2, 1 through 24, and 30.');
+            return;
+        }
+
+        difficulty = args[0];
         const fs = require('fs'); // loads filesystem
         const rf = require('..\\helperMethods\\readFile.js'); //loads the file reader method in the helpermethods folder
-        rawenemy = rf.execute(`.\\enemies\\${difficulty}.txt`);
+        try {
+            rawenemy = rf.execute(`.\\enemies\\${difficulty}.txt`);
+        } catch (err) {
+            message.channel.send('CR not recognized. use the "?" argument to see how to use this command');
+            return;
+        }
         var enemyarray = rawenemy.split("_");
         enemyname = enemyarray[0]
         rawhealth = enemyarray[1]
@@ -60,7 +76,12 @@ module.exports = {
         finalhp = health + addhp
 
         if(true){
-            message.channel.send(`A(n) ${enemyname} appears with ${finalhp} health points!`);
+            let embed = new Discord.RichEmbed;
+            embed.setColor(0x0099ff);
+            embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
+            embed.addField('Enemy Generator',`A(n) ${enemyname} appears with ${finalhp} health points!`, true);
+            // message.channel.send(`A(n) ${enemyname} appears with ${finalhp} health points!`);
+            message.channel.send(embed);
         }
     },
 };

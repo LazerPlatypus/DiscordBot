@@ -6,6 +6,14 @@ module.exports = {
     args: false,
     cooldown: false,
     execute(message, args) {
-        message.channel.send('AWW MAN!');
+        const Discord = require('discord.js');
+        if (args[0]=='?') {
+            message.channel.send('returns a great reference to a 2011 song.\nusage: !creeper (no args needed)')
+        }
+        let embed = new Discord.RichEmbed;
+        embed.setColor(0x0099ff);
+        embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
+        embed.addField('Creeper', 'AWW MAN!', true);
+        message.channel.send(embed);
     },
 };

@@ -9,6 +9,13 @@ module.exports = {
     cooldowntime: 10,
     
     execute(message, args){
+
+        if (args[0] == '?') {
+            message.channel.send('this is the help command, and I will DM you a list of all the commands I can use, with descriptions of each.\n'
+            +'usage: !help (no args needed)');
+            return;
+        }
+
         // load dependencies
         const fs = require('fs');
         const Discord = require('discord.js');
@@ -24,8 +31,7 @@ module.exports = {
         // because each embed can only have 25 fields, we have to make a new embed element
         // in the array after 25.
         for (i = 0, j = -1; i < commandFiles.length; i++) {
-            if (i % 24 == 0) {
-                console.log(`made it i = ${i}, j = ${j}`);
+            if (i % 24 == 0) {  
                 embeds.push(new Discord.RichEmbed);
                 j++;
                 embeds[j].setColor(0x0099ff);
@@ -37,7 +43,12 @@ module.exports = {
                 embeds[j].setThumbnail('https://i.imgur.com/sRNA93B.png')
             }
             var command = require(`../commands/${commandFiles[i]}`);
-            embeds[j].addField(command.name, command.description, false);
+            embeds[j].addField(`_\n${command.name}`, `Description: ${command.description}
+            Other names: ${command.aliases.length>0?command.aliases.join(', '):'none'}
+            usage: ${command.usage==undefined?'none specified':command.usage}
+            Only usable in text-server: ${command.guildOnly}
+            Uses arguments: ${command.args}
+            Has a cooldown: ${command.cooldown + (command.cooldown?'\nCooldown time: '+command.cooldowntime:'')}\n\n`, false);
         }
 
         // loop through and print out each embeded item.

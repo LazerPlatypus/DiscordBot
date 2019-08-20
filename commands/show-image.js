@@ -1,9 +1,10 @@
 module.exports = {
     name: 'show-image',
     description: 'Displays an Img that has been uploaded before with its command, call the command by itself for a list',
-    aliases: [],
+    aliases: ['si', 'show'],
+
     guildOnly: true,
-    args: true,
+    args: false,
     usage: '<image name>',
     cooldown: false,
     execute(message, args) {
@@ -40,30 +41,41 @@ module.exports = {
             }
         }
 
+        const embed = new Discord.RichEmbed;
         // if it was found, display that image
         if (foundIndex != undefined) {
-            const embed = new Discord.RichEmbed();
-            embed.setTitle(fileName);
-            embed.attachFile(`uploads\\images\\${files[foundIndex]}`);
-            embed.setImage(`attachment://${files[foundIndex]}`);
-            message.channel.send(embed);
+            const attachment = new Discord.Attachment(`uploads\\images\\${files[foundIndex]}`, files[foundIndex]);
+            embed.attachFile(attachment);
+            // embed.setImage(`uploads\\images\\${files[foundIndex]}`);
+            message.channel.send(attachment);
+            return;
         // otherwise, loop through our list of images, and return names of those with similar names
-        } else {
-            if (fileName.trim() == ""){
+        } 
+        var matches = [0, -1];
+        for (i = 0; i < filesNoExtensions.length; i++) {
+            if (filesNoExtensions[i].toUpperCase().includes(fileName.toUpperCase())) {
+                matches[0]++;
+                matches[1] = i;
+            }
+        }
+        console.log(matches[0]);
+        console.log(matches[1]);
+        if (matches[0] == 1) {
+            this.execute(message, filesNoExtensions[matches[1]].split(' '));
+        } else if (fileName.trim() == ""){
+                embed.setTitle("Images on Server:")
                 for (i = 0; i < files.length; i++) {
-                    message.channel.send(`**${filesNoExtensions[i]}**`);
+                    embed.addField('\u200B',`**${filesNoExtensions[i]}**`);
                 }
-            } 
-            else {
-
-                message.channel.send('There were no images matching the name provided. Did you mean any of these: ');
-                var searchLetters = fileName.substring(0, 3);
-                for (i = 0; i < files.length; i++) {
-                    if (files[i].match(searchLetters)) {
-                        message.channel.send(`**${filesNoExtensions[i]}**`);
-                    }
+        } else {
+            embed.addField('There were no images matching the name provided. Did you mean any of these: ','\u200B');
+            var searchLetters = fileName.substring(0, 3);
+            for (i = 0; i < files.length; i++) {
+                if (files[i].match(searchLetters)) {
+                    embed.addField('\u200B',`**${filesNoExtensions[i]}**`);
                 }
             }
         }
+        message.channel.send(embed);
     },
 };
