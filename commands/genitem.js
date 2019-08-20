@@ -1,31 +1,35 @@
 module.exports = {
     name: 'genitem',
     description: 'returns a random item',
-
+    aliases: [],
+    guildOnly: true,
+    args: true,
+    usage: '<item type>',
+    cooldown: false,
     execute(message, args) {
-        if (message.content.startsWith("!genitem ")) {
-            var item = message.content.substr("!genitem ".length);
-            var iarray = item.split(" ");
-            lootClass = iarray[0];
-            lootAmount = iarray[1];
-
-
-        }
+        lootClass = args[0];
+        lootAmount = args[1];
 
         for (i = 0; i < lootAmount; i++) {
             const fs = require('fs'); // loads filesystem
-            const rf = require('..\\helperMethods\\readFile.js'); //loads the file reader method in the helpermethods folder
+            const is = require('..\\helperMethods\\itemSorter.js'); //loads the file reader method in the helpermethods folder
 
-            newItem = rf.execute('.\\items.txt');
-            var itemArray = newItem.split("|");
+            const items = is.execute('.\\items.txt', lootClass);
+            if (items.length < 1) {
+                message.channel.send('there are no items of that class');
+                return;
+            }
+            let itemArray = items[Math.floor(Math.random() * items.length) + 1];
             levelClass = itemArray[9];
 
-            if (levelClass == lootClass) {
+            console.log(`loot class: ${lootClass}\nloot amout: ${lootAmount}\nlevelClass: ${levelClass}\n\n${itemArray}`);
 
-                itemSubType = itemArray[5];
+            if (levelClass.toString().trim() == lootClass.toString().trim()) {
 
-                if (itemSubType = 'armor') {
+                let itemSubType = itemArray[5];
 
+                if (itemSubType == 'armor') {
+                    console.log('im an armor');
                     itemMstwk = itemArray[0];
                     itemName = itemArray[1];
                     itemEffect = itemArray[2];
@@ -33,10 +37,15 @@ module.exports = {
                     itemAC = itemArray[6];
                     itemDescrpt = itemArray[8]
 
-                    message.channel.send(`A ${itemMstwk} ${itemName} | ${itemType} | ${itemEffect} | ${itemAC} | ${itemDescrpt}`);
+                    let text = itemName == '' ? '' : `A ${itemMstwk} ${itemName}`;
+                    text += itemType == '' ? '' : ` | ${itemType}`;
+                    text += itemEffect == '' ? '' : ` | ${itemEffect}`;
+                    text += itemAC == '' ? '' : ` | ${itemAC}`;
+                    text += itemDescrpt == '' ? '' : ` | ${itemDescrpt}`;
+                    message.channel.send(text);
 
-                } else if (itemSubType = 'weapon') {
-
+                } else if (itemSubType == 'weapon') {
+                    console.log('im an wpn');
                     itemMstwk = itemArray[0];
                     itemName = itemArray[1];
                     itemEffect = itemArray[2];
@@ -45,26 +54,41 @@ module.exports = {
                     itemDamage = itemArray[7];
                     itemDescrpt = itemArray[8];
 
-                    message.channel.send(`A ${itemMstwk} ${itemName} | ${itemType} | ${itemRange} | ${ itemEffect } | ${ itemDamage } | ${ itemDescrpt }`);
+                    let text = itemName == '' ? '' : `A ${itemMstwk} ${itemName}`;
+                    text += itemType == '' ? '' : ` | ${itemType}`;
+                    text += itemRange == '' ? '' : ` | ${itemRange}`;
+                    text += itemEffect == '' ? '' : ` | ${itemEffect}`;
+                    text += itemDamage == '' ? '' : ` | ${itemDamage}`;
+                    text += itemDescrpt == '' ? '' : ` | ${itemDescrpt}`;
+                    message.channel.send(text);
 
-                } else if (itemSubType = 'accessory') {
-
+                } else if (itemSubType == 'accessory') {
+                    console.log('im an accy');
                     itemName = itemArray[1];
                     itemEffect = itemArray[2];
                     itemType = itemArray[3];
                     itemDescrpt = itemArray[8]
                     itemAC = itemArray[6];
 
-                    message.channel.send(`A ${itemName} | ${itemType} | ${itemEffect} | ${itemAC} | ${itemDescrpt}`);
+                    let text = itemName == '' ? '' : `${itemName}`;
+                    text += itemType == '' ? '' : ` | ${itemType}`;
+                    text += itemEffect == '' ? '' : ` | ${itemEffect}`;
+                    text += itemAC == '' ? '' : ` | ${itemAC}`;
+                    text += itemDescrpt == '' ? '' : ` | ${itemDescrpt}`;
+                    message.channel.send(text);
 
-                } else if (itemSubType = 'item') {
-
+                } else if (itemSubType == 'item') {
+                    console.log('im an item');
                     itemName = itemArray[1];
                     itemEffect = itemArray[2];
                     itemType = itemArray[3];
                     itemDescrpt = itemArray[8]
 
-                    message.channel.send(`A ${itemName} | ${itemType} | ${itemEffect} | ${itemDescrpt}`);
+                    let text = itemName == '' ? '' : `${itemName}`;
+                    text += itemType == '' ? '' : ` | ${itemType}`;
+                    text += itemEffect == '' ? '' : ` | ${itemEffect}`;
+                    text += itemDescrpt == '' ? '' : ` | ${itemDescrpt}`;
+                    message.channel.send(text);
 
                 }
 
