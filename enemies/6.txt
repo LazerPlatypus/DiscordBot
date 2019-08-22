@@ -1,7 +1,7 @@
 Chimera_12d10+48
 Drider_13d10+52
 Invisible Stalker_16d8+32
-Mage_9d8
+Mage_9d8+0
 Mammoth_11d12+55
 Medusa_17d8+51
 Vrock_11d10+44

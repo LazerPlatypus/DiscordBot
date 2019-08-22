@@ -11,13 +11,13 @@ Druid_5d8+5
 Ettercap_8d8+8
 Gargoyle_7d8+21
 Gelatinous Cube_8d10+40
-Ghast_8d8
+Ghast_8d8+0
 Giant Boar_5d10+5
 Giant Constrictor Snake_8d12+8
 Giant Elk_5d12+10
 Gibbering Mouther_9d8+27
 Green Dragon Wyrmling_7d8+7
-Grick_6d8
+Grick_6d8+0
 Griffon_7d10+21
 Hunter Shark_6d10+12
 Merrow_6d10+12
@@ -31,7 +31,7 @@ Plesiosaurus_8d10+24
 Polar Bear_5d10+15
 Preist_5d8+5
 Rhinoceros_6d10+12
-Rug of Smothering_6d10
+Rug of Smothering_6d10+0
 Saber-Toothed Tiger_1d2+51
 Sea Hag_7d8+21
 Silver Dragon Wyrmling_6d8+18

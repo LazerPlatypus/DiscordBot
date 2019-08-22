@@ -5,9 +5,9 @@ Bug Bear_5d8+5
 Copper Dragon Wyrmling_4d8+4
 Death Dog_6d8+12
 Dire Wolf_5d10+10
-Dryad_5d8
+Dryad_5d8+0
 Duergar_4d8+4
-Ghoul_5d8
+Ghoul_5d8+0
 Giant Eagle_4d10+4
 Giant Hyena_6d10+12
 Giant Octopus_8d10+8
@@ -18,8 +18,8 @@ Harpy_7d8+7
 Hippogriff_3d10+3
 Imp_3d4+3
 Lion_4d10+4
-Quasit_3d4
-Specter_5d8
-Spy_6d8
-Swarm of Quippers_8d8-8
+Quasit_3d4+0
+Specter_5d8+0
+Spy_6d8+0
+Swarm of Quippers_8d8+8
 Tiger_5d10+10

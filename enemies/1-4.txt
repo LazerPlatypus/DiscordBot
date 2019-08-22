@@ -1,32 +1,32 @@
-Acolyte_2d8
+Acolyte_2d8+0
 Axe Beak_3d10+3
 Blink Dog_4d8+4
 Boar_2d8+2
 Constrictor Snake_2d10+2
 Draft Horse_3d10+3
 Dretch_4d6+4
-Drow_3d8
+Drow_3d8+0
 Elk_2d10+2
-Flying Sword_5d6
+Flying Sword_5d6+0
 Giant Badger_2d8+4
 Giant Bat_4d10
 Giant Centipede_1d6+1
-Giant Frog_4d8
+Giant Frog_4d8+0
 Giant Lizard_3d10+3
 Giant Owl_3d10+3
 Giant Venomous Snake_2d8+2
 Giant Wolf Spider_2d8+2
-Goblin_2d6
+Goblin_2d6+0
 Grimlock_3d8+2
-Panther_3d8
+Panther_3d8+0
 Psuedodragon_2d4+2
 Riding Horse_2d10+2
 Skeleton_2d8+4
-Sprite_1d4
-Steam Mephit_6d6
+Sprite_1d4+0
+Steam Mephit_6d6+0
 Swarm of Rats_7d8-7
-Swarm of Bats_5d8
+Swarm of Bats_5d8+0
 Swarm of Ravens_7d8-7
-Violet Fungus_4d8
+Violet Fungus_4d8+0
 Wolf_2d8+2
 Zombie_3d8+9

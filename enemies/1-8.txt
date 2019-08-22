@@ -1,19 +1,19 @@
 Bandit_2d8+2
-Blood-Hawk_2d6 
+Blood-Hawk_2d6+0
 Camel_2d10+4
-Cultist_2d8
+Cultist_2d8+0
 Diseased Giant Rat_1d2+5
-Flying Snake_2d4
-Giant Crab_3d8
-Giant Rat_2d6
-Giant Weasel_2d8
+Flying Snake_2d4+0
+Giant Crab_3d8+0
+Giant Rat_2d6+0
+Giant Weasel_2d8+0
 Guard_2d8+2
 Kobold_2d6-2
 Mastiff_1d8+1
 Merfolk_2d8+2
 Mule_2d8+2
-Noble_2d8
-Venomous Snake_1d4
+Noble_2d8+0
+Venomous Snake_1d4+0
 Pony_2d8+2
-Stirge_1d4
+Stirge_1d4+0
 Tribal Warrior_2d8+2

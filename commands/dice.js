@@ -18,7 +18,14 @@ module.exports = {
             return;
         }
         amount = args[0];
-        size = args[1];
+        if(amount > 100) {
+            return message.channel.send('The maximum number of dice you can roll at once is 100.')
+        }
+        size = args[1].toLowerCase();
+        validDice = ['d2', 'd4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'];
+        if(!validDice.includes(size)) {
+            return message.channel.send(`'${size}' is not a valid type of die.\nSupported die types are: d2, d4, d6, d8, d10, d12, d20, and d100`);
+        }
         roll = 0
         critsuccess = 0
         critfail = 0
