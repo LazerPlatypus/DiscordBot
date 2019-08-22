@@ -3,7 +3,7 @@ module.exports = {
 	description: 'Plays the audio when called with an existing audio file',
 	aliases: ['sound'],
 	guildOnly: true,
-	args: true,
+	args: false,
 	usage: '<file name>',
 	cooldown: false,
 	async execute(message, args) {
@@ -39,6 +39,7 @@ module.exports = {
 			 }
 		 }
  
+		 const embed = new Discord.RichEmbed;
 		 // if it was found, play that sound
 		 if (foundIndex != undefined) {
 			 var voiceChannel = message.member.voiceChannel;
@@ -49,23 +50,32 @@ module.exports = {
 				 const dispatcher = connection.playFile(`.\\uploads\\sounds\\${files[foundIndex]}`);
 				 })
 			 .catch(console.error);
+			 return;
 		 // otherwise, loop through our list of sounds, and return names of those with similar names
-		 } else {
-			 if (fileName.trim() == ""){
-				 for (i = 0; i < files.length; i++) {
-					 message.channel.send(`**${filesNoExtensions[i]}**`);
-				 }
-			 } 
-			 else {
- 
-				 message.channel.send('There were no images matching the name provided. Did you mean any of these: ');
-				 var searchLetters = fileName.substring(0, 3);
-				 for (i = 0; i < files.length; i++) {
-					 if (files[i].match(searchLetters)) {
-						 message.channel.send(`**${filesNoExtensions[i]}**`);
-					 }
-				 }
-			 }
-		 }
+        } 
+        var matches = [0, -1];
+        for (i = 0; i < filesNoExtensions.length; i++) {
+            if (filesNoExtensions[i].toUpperCase().includes(fileName.toUpperCase())) {
+                matches[0]++;
+                matches[1] = i;
+            }
+        }
+        if (matches[0] == 1) {
+            this.execute(message, filesNoExtensions[matches[1]].split(' '));
+        } else if (fileName.trim() == ""){
+                embed.setTitle("Sounds on Server:")
+                for (i = 0; i < files.length; i++) {
+                    embed.addField('\u200B',`**${filesNoExtensions[i]}**`);
+                }
+        } else {
+            embed.addField('There were no sounds matching the name provided. Did you mean any of these: ','\u200B');
+            var searchLetters = fileName.substring(0, 3);
+            for (i = 0; i < files.length; i++) {
+                if (files[i].match(searchLetters)) {
+                    embed.addField('\u200B',`**${filesNoExtensions[i]}**`);
+                }
+            }
+        }
+        message.channel.send(embed);
     },
 };

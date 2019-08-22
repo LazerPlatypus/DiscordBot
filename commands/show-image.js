@@ -1,7 +1,7 @@
 module.exports = {
     name: 'show-image',
     description: 'Displays an Img that has been uploaded before with its command, call the command by itself for a list',
-    aliases: ['si', 'show'],
+    aliases: ['si', 'show', 'image'],
 
     guildOnly: true,
     args: false,
@@ -58,8 +58,6 @@ module.exports = {
                 matches[1] = i;
             }
         }
-        console.log(matches[0]);
-        console.log(matches[1]);
         if (matches[0] == 1) {
             this.execute(message, filesNoExtensions[matches[1]].split(' '));
         } else if (fileName.trim() == ""){

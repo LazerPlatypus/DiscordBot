@@ -4,14 +4,14 @@ Cockatrice_6d6+6
 Crocodile_3d10+3
 Darkmantle_5d6+5
 Deep Gnome_3d6+6
-Dust Mephit_5d6
+Dust Mephit_5d6+0
 Giant Goat_3d10+3
-Giant Sea Horse_3d10
-Giant Wasp_3d8
-Gnoll_5d8
+Giant Sea Horse_3d10+0
+Giant Wasp_3d8+0
+Gnoll_5d8+0
 Gray Ooze_3d8+9
 Hobgoblin_2d8+2
-Ice Mephit_6d6
+Ice Mephit_6d6+0
 Lizardfolk_4d8+4
 Magma Mephit_5d6+5
 Magmin_2d6+2
@@ -19,13 +19,13 @@ Orc_2d8+8
 Reef Shark_4d8+4
 Rust Monster_5d8+5
 Sahuagin_4d8+4
-Satyr_7d8
+Satyr_7d8+0
 Scout_3d8+3
-Shadow of Beetles_5d8
-Swarm of Centipedes_5d8
-Swarm of Spiders_5d8
-Swarm of Insects_5d8
-Swarm of Wasps_5d8
+Shadow of Beetles_5d8+0
+Swarm of Centipedes_5d8+0
+Swarm of Spiders_5d8+0
+Swarm of Insects_5d8+0
+Swarm of Wasps_5d8+0
 Thug_5d8+10
 Warhorse_3d10+6
 Warhorse Skeleton_4d10+4

@@ -5,7 +5,7 @@ module.exports = {
 
     guildOnly: false,
     args: true,
-    cooldDown: false,
+    cooldown: false,
     execute(message, args) {
         const Discord = require('discord.js');
     // if(message.content.startsWith("!enemy ")){
@@ -33,7 +33,12 @@ module.exports = {
         var enemyarray = rawenemy.split("_");
         enemyname = enemyarray[0]
         rawhealth = enemyarray[1]
-        var healtharray = rawhealth.split("+")
+        var healtharray
+        if(rawhealth.includes('+')) {
+            healtharray = rawhealth.split("+")
+        } else {
+            healtharray = rawhealth.split("-")
+        }
         dicevalue = healtharray[0]
         addvalue = healtharray[1]
         var dicearray = dicevalue.split("d")
