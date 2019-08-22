@@ -3,7 +3,7 @@ module.exports = {
 	description: 'Plays the audio when called with an existing audio file',
 	aliases: ['sound'],
 	guildOnly: true,
-	args: true,
+	args: false,
 	usage: '<file name>',
 	cooldown: false,
 	async execute(message, args) {
