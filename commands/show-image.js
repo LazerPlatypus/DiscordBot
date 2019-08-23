@@ -67,6 +67,7 @@ module.exports = {
             this.execute(message, filesNoExtensions[matches[1]].split(' '));
             return;
         } else if (fileName.trim() == ""){
+                st.clearMessage()
                 st.setTitle("Images on Server:")
                 for (i = 0; i < files.length; i++) {
                     st.addText(`**${filesNoExtensions[i]}**\n`);
