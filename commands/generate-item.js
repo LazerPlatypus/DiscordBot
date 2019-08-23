@@ -10,6 +10,17 @@ module.exports = {
         const is = require('..\\helperMethods\\itemSorter.js');
         const st = require('..\\helperMethods\\send-text.js');
 
+        if (args[0] == '?') {
+            st.clearMessage();
+            st.setTitle('Generate-Item - HELP');
+            st.addText('This command will generate random loot.'+
+            'You can specify the amount of loot, and the scale of \'good-ness\' of the loot.'+
+            '\nusage: !generate-item <amount of loot> <scale of loot>\n'+
+            'Loot scale goes from 1 to 20, and should be ~roughly equivilent to the encounter CR');
+            st.sendMessage(message.channel);
+            return;
+        }
+
         let lootAmount = parseInt(args[0]);
         let lootClass = args[1];
 
