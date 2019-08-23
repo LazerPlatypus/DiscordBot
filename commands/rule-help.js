@@ -8,10 +8,15 @@ module.exports = {
     cooldown: false,
     execute(message, args) {
 
+        const st = require('..\\helperMethods\\send-text.js');
+
         if (args[0] == '?') {
-            message.channel.send('This command returns the official d&d ruling on a specified topic\n'
+            st.clearMessage();
+            st.setTitle('Rule-Help HELP');
+            st.addText('This command returns the official d&d ruling on a specified topic\n'
             +'If I cannot find the topic you entered, I will return topics with similar names, if any exist\n'
             +'usage: !rule-help <name of rule/topic>');
+            st.sendMessage(message.channel);
             return;
         }
 
@@ -21,13 +26,13 @@ module.exports = {
         var ruleName = args.join(' ').trim().toUpperCase();
         var found = false;
 
-        let embed = new Discord.RichEmbed;
-        embed.setColor(0x0099ff);
-        embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
         for (i = 0; i < ruleData.length && !found; i++) {
             if (ruleData[i][0].toUpperCase() == ruleName) {
-                embed.setTitle(`${ruleData[i][0]}`);
-                embed.setDescription(`${ruleData[i][1]}\n\n${ruleData[i][2]!=""?ruleData[i][2]+'\n\n':""}Source: ${ruleData[i][3]}`);
+                st.clearMessage();
+                st.setTitle(`${ruleData[i][0]}`);
+                st.addText(`${ruleData[i][1]}\n\n${ruleData[i][2]!=""?ruleData[i][2]+'\n\n':""}Source: ${ruleData[i][3]}`);
+                st.sendMessage(message.channel);
+                st.clearMessage();
                 found = true;
             }
         }
@@ -42,22 +47,24 @@ module.exports = {
             }
             if (matches[0] == 1) {
                 this.execute(message, ruleData[matches[1]][0].split(' '));
+                return;
             }
             else {
-                embed.addField('I couldn\'t find a rule with that name.','\u200B', true);
+                st.clearMessage();
+                st.setTitle('I couldn\'t find a rule with that name.');
                 for (i = 0; i < ruleData.length; i++) {
                     if (ruleData[i][0].toUpperCase().includes(ruleName.substring(0, 3))) {
                         if (!found) {
-                            embed.addField('\u200B','_Were you looking for one of these?_', false);
+                            st.addText('_Were you looking for one of these?_\n');
                             found = true;
                         }
-                        embed.addField('\u200B',`**${ruleData[i][0]}**`);
+                        st.addText(`**${ruleData[i][0]}**\n`);
                     }
                 }
             }
         }
-        if (embed.fields != undefined && embed.fields.length > 0 || embed.title != undefined) {
-            message.channel.send(embed);
+        if (st.text != '') {
+            st.sendMessage(message.channel);
         }
     },
 };

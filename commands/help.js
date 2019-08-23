@@ -10,51 +10,77 @@ module.exports = {
     
     execute(message, args){
 
-        if (args[0] == '?') {
-            message.channel.send('this is the help command, and I will DM you a list of all the commands I can use, with descriptions of each.\n'
-            +'usage: !help (no args needed)');
-            return;
-        }
-
         // load dependencies
         const fs = require('fs');
         const Discord = require('discord.js');
         const {prefix} = require('../config.json');
+        const st = require('..\\helperMethods\\send-text.js');
+
+        // display the help message... funny man.
+        if (args[0] == '?') {
+            st.clearMessage();
+            st.setTitle('Help - HELP');
+            st.addText('this is the help command, and I will DM you a list of all the commands I can use, with descriptions of each.\n'
+            +'usage: !help (no args needed)');
+            st.sendMessage(message.author);
+            return;
+        }
+
 
         // get the commands loaded in a collection
         commands = new Discord.Collection(); // makes a collection for our commands to go in
         const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js')); // gets our commands by their name
         commandFiles.sort();
-        var embeds = new Array(0);
-        
-        // loop through the collection, adding each command's info to the embed.
-        // because each embed can only have 25 fields, we have to make a new embed element
-        // in the array after 25.
-        for (i = 0, j = -1; i < commandFiles.length; i++) {
-            if (i % 24 == 0) {  
-                embeds.push(new Discord.RichEmbed);
-                j++;
-                embeds[j].setColor(0x0099ff);
-                embeds[j].setTitle(`\nDiscord DnD Bot (page ${j+1})\nThe current prefix is: ${prefix}`);
-                embeds[j].setAuthor('Nash Molstead, Jake Vella,\n Adam Holt, Daniil Baydak,\n Robert Dragoo',
-                                    'https://i.imgur.com/sRNA93B.png',
-                                    'https://discord.js.org');
-                embeds[j].setDescription('"This bot is a D&D DM\'s wet dream" --Jake Vella, 2K19');
-                embeds[j].setThumbnail('https://i.imgur.com/sRNA93B.png')
-            }
-            var command = require(`../commands/${commandFiles[i]}`);
-            embeds[j].addField(`_\n${command.name}`, `Description: ${command.description}
+
+        // prepare the message
+        st.clearMessage();
+        st.setTitle(`Discord D&D Bot\nThe current prefix is: ${prefix}`);
+        st.setAuthor(`Nash Molstead, Jake Vella, \nAdam Holt, Daniil Baydak,\nRobert Dragoo`);
+
+        // for each command, add all the info the text sender.
+        for (i = 0; i < commandFiles.length; i++) {
+            let command = require(`../commands/${commandFiles[i]}`);
+            st.addText(`_\n**${command.name}**\nDescription: ${command.description}
             Other names: ${command.aliases.length>0?command.aliases.join(', '):'none'}
             usage: ${command.usage==undefined?'none specified':command.usage}
             Only usable in text-server: ${command.guildOnly}
             Uses arguments: ${command.args}
-            Has a cooldown: ${command.cooldown + (command.cooldown?'\nCooldown time: '+command.cooldowntime:'')}\n\n`, false);
+            Has a cooldown: ${command.cooldown + (command.cooldown?'\nCooldown time: '+command.cooldowntime:'')}\n\n`)
         }
 
-        // loop through and print out each embeded item.
-        embeds.forEach(embed => {
-            message.author.send(embed);
-        })
+        // send the message.
+        st.sendMessage(message.author);
+
+        // var embeds = new Array(0);
+        
+        // // loop through the collection, adding each command's info to the embed.
+        // // because each embed can only have 25 fields, we have to make a new embed element
+        // // in the array after 25.
+        // for (i = 0, j = -1; i < commandFiles.length; i++) {
+        //     if (i % 24 == 0) {  
+        //         embeds.push(new Discord.RichEmbed);
+        //         j++;
+        //         embeds[j].setColor(0x0099ff);
+        //         embeds[j].setTitle(`\nDiscord DnD Bot (page ${j+1})\nThe current prefix is: ${prefix}`);
+        //         embeds[j].setAuthor('Nash Molstead, Jake Vella,\n Adam Holt, Daniil Baydak,\n Robert Dragoo',
+        //                             'https://i.imgur.com/sRNA93B.png',
+        //                             'https://discord.js.org');
+        //         embeds[j].setDescription('"This bot is a D&D DM\'s wet dream" --Jake Vella, 2K19');
+        //         embeds[j].setThumbnail('https://i.imgur.com/sRNA93B.png')
+        //     }
+        //     var command = require(`../commands/${commandFiles[i]}`);
+        //     embeds[j].addField(`_\n${command.name}`, `Description: ${command.description}
+        //     Other names: ${command.aliases.length>0?command.aliases.join(', '):'none'}
+        //     usage: ${command.usage==undefined?'none specified':command.usage}
+        //     Only usable in text-server: ${command.guildOnly}
+        //     Uses arguments: ${command.args}
+        //     Has a cooldown: ${command.cooldown + (command.cooldown?'\nCooldown time: '+command.cooldowntime:'')}\n\n`, false);
+        // }
+
+        // // loop through and print out each embeded item.
+        // embeds.forEach(embed => {
+        //     message.author.send(embed);
+        // })
 
         // message.author.send(`All Commands Start with !`)
         // for (const file of commandFiles) {

@@ -8,12 +8,17 @@ module.exports = {
     cooldown: false,
     execute(message, args) {
 
+        const st = require('..\\helperMethods\\send-text.js');
+
         // check for help, dont run any other code if true.
         if (args[0] == '?') {
-            message.channel.send('This command allows for the uploading of images and sounds.\n' +
+            st.clearMessage();
+            st.setTitle('Upload - HELP');
+            st.addText('This command allows for the uploading of images and sounds.\n' +
             'Sounds can be retrieved using the \'play\' command\n ' +
             'Images can be retrieved using the \'show-image\' command.\n' +
             'usage: click the \'upload\' button, add the comment "!upload {desired name of file}", click send.');
+            st.sendMessage(message.channel);
             return;
         }
 
@@ -29,7 +34,10 @@ module.exports = {
 
         // if there are no attachments, tell the user but dont run anything else.
         if (Attachment[0] == undefined) {
-            message.channel.send('I didn\'t see any files uploaded!');
+            st.clearMessage();
+            st.setTitle('Upload - ERROR');
+            st.addText('I didn\'t see any files uploaded!');
+            st.sendMessage();
             return;
         }
 
@@ -39,8 +47,10 @@ module.exports = {
         var fileName = args.join(' ');
 
         if (fileName.match('[\\.?]')) {
-            message.channel.send(fileName);
-            message.channel.send('the filename cannot contain periods or question marks');
+            st.clearMessage();
+            st.setTitle('Upload - ERROR');
+            st.addText(`${fileName} is bad. the filename cannot contain periods or question marks`);
+            st.sendMessage(message.channel);
             return;
         }
 
@@ -64,7 +74,10 @@ module.exports = {
 
         // download the image to its location with the filename specified
         download.execute(fileURL, location, fileName, fileExtension, function () {
-            message.channel.send(`Upload completed, the name is **${fileName}**`);
+            st.clearMessage();
+            st.setTitle('Upload - Success')
+            st.addText(`Upload completed, the name is **${fileName}**`);
+            st.sendMessage(message.channel);
             console.log(`new file uploaded, the name is ${fileName}.${fileExtension}`);
         })
     },

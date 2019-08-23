@@ -8,16 +8,20 @@ module.exports = {
     cooldowntime: 5,
     execute(message, args) {
 
+        const Discord = require('discord.js');
+        const rf = require('..\\helperMethods\\readFile.js'); //loads the file reader method in the helpermethods folder
+        const st = require('..\\helperMethods\\send-text.js');
+
         if (args[0] == '?') {
-            message.channel.send('this command generates an NPC with a name, and health points.'
+            st.clearMessage();
+            st.setAuthor('NPC-Adult - HELP');
+            st.addText('this command generates an NPC with a name, and health points.'
             +' the NPC could be commoner, or an adventurer (meaning it has SDCIWC scores)\n'
             +'usage: !npc-adult (no args needed)');
+            st.sendMessage(message.channel);
             return;
         }
 
-        const Discord = require('discord.js');
-        const fs = require('fs'); // loads filesystem
-        const rf = require('..\\helperMethods\\readFile.js'); //loads the file reader method in the helpermethods folder
         isAdventurer = false;
         // generates stats
         str = Math.floor((Math.random() * 18) + 3);
@@ -80,11 +84,10 @@ module.exports = {
         lastname = rf.execute("lnames.txt");
         race = rf.execute("races.txt");
         //prints out to the console, or in this case the chat
-        let embed = new Discord.RichEmbed;
-        embed.setColor(0x0099ff);
-        embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
+        st.clearMessage();
+        st.setAuthor('NPC-Adult - Results');
         if(isAdventurer){
-            embed.addField('NPC Generator',`A(n) ${race} Adventurer appears! Their name is ${firstname} ${lastname}\n
+            st.addText('NPC Generator',`A(n) ${race} Adventurer appears! Their name is ${firstname} ${lastname}\n
             Str: ${str}\n
             Dex: ${dex}\n
             Int: ${int}\n
@@ -95,9 +98,9 @@ module.exports = {
             Level: ${advLevel} , Health: ${advHealth}`, false
             );
         } else {
-            embed.addField('NPC Generator',`A regular ${race} appears!\n Their name is ${firstname} ${lastname}\n
+            st.addText('NPC Generator',`A regular ${race} appears!\n Their name is ${firstname} ${lastname}\n
             They are a ${npcjob} and are ${Age} years old, they also have ${npcHealth} health points.`, false);
         }
-        message.channel.send(embed);
+        st.sendMessage(message.channel);
     },
 };

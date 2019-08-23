@@ -7,24 +7,36 @@ module.exports = {
     cooldown: false,
     execute(message, args) {
     const Discord = require('discord.js');
+    const st = require('..\\helperMethods\\send-text.js');
     // if (message.content.startsWith("!dice ")) {
         // var dice = message.content.substr("!dice ".length);
         // var darray = dice.split(" ");
         if (args[0] == '?') {
-            message.channel.send('returns the sum of rolling a specific number of dice\n'
+            st.clearMessage();
+            st.setTitle('Dice - HELP');
+            st.addText('returns the sum of rolling a specific number of dice\n'
             +'this command will also declare how many of those dice rolled critical failures or successes\n'
             +'usage: <number of dice> <type of die>\n'
             +'supported die types are: d2, d4, d6, d8, d10, d12, d20, and d100');
+            st.sendMessage(message.channel);
             return;
         }
         amount = args[0];
         if(amount > 100) {
-            return message.channel.send('The maximum number of dice you can roll at once is 100.')
+            st.clearMessage();
+            st.setTitle('Dice - ERROR');
+            st.addText('The maximum number of dice you can roll at once is 100.');
+            st.sendMessage(message.channel);
+            return;
         }
         size = args[1].toLowerCase();
         validDice = ['d2', 'd4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'];
         if(!validDice.includes(size)) {
-            return message.channel.send(`'${size}' is not a valid type of die.\nSupported die types are: d2, d4, d6, d8, d10, d12, d20, and d100`);
+            st.clearMessage();
+            st.setTitle('Dice - ERROR');
+            st.addText(`'${size}' is not a valid type of die.\nSupported die types are: d2, d4, d6, d8, d10, d12, d20, and d100`);
+            st.sendMessage(message.channel);
+            return;
         }
         roll = 0
         critsuccess = 0
@@ -113,33 +125,32 @@ module.exports = {
         }
 
 
-        
-        let embed = new Discord.RichEmbed;
-        embed.setColor(0x0099ff);
-        embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
+        st.clearMessage();
+        st.setTitle('Dice - Result');
         if(amount == 1 && critsuccess > 0){
-            embed.addField('Dice', `You have rolled a ${size} and got a Critical Success with a roll of ${roll}`, true);
+            st.addText(`You have rolled a ${size} and got a Critical Success with a roll of ${roll}`);
             // message.channel.send(`You have rolled a ${size} and got a Critical Success with a roll of ${roll}`);
         }
         else
          if(amount == 1 && critfail > 0){
-            embed.addField('Dice', `You have rolled a ${size} and got a Critical Failure with a roll of ${roll}`, true);
+            st.addText(`You have rolled a ${size} and got a Critical Failure with a roll of ${roll}`);
             // message.channel.send(`You have rolled a ${size} and got a Critical Failure with a roll of ${roll}`);
         }
         else if(amount == 1){
-            embed.addField('Dice',`You have rolled a ${size} and got a ${roll}`, true);
+            st.addText(`You have rolled a ${size} and got a ${roll}`);
             // message.channel.send(`You have rolled a ${size} and got a ${roll}`);
         }
         else if(amount > 1){
-            embed.addField('Dice',`You have rolled ${amount} ${size} and got a total of ${roll}\n
-            there was ${critsuccess} crits and ${critfail} critical failures.`, false);
+            st.addText(`You have rolled ${amount} ${size} and got a total of ${roll}\n
+            there was ${critsuccess} crits and ${critfail} critical failures.`);
             // message.channel.send(`You have rolled ${amount} ${size} and got a total of ${roll}\n
             // there was ${critsuccess} crits and ${critfail} critical failures.`);
         }
         else{
-            embed.addField('Error',`Make sure that your command follows the rules (!dice "amount" d"size")`, true);
+            st.setTitle('Dice - ERROR');
+            st.addText(`Make sure that your command follows the rules (!dice "amount" d"size")`);
             // message.channel.send(`Make sure that your command follows the rules (!dice "amount" d"size")`);
         }
-        message.channel.send(embed);
+        st.sendMessage(message.channel);
     },
 };

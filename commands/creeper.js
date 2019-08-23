@@ -6,14 +6,24 @@ module.exports = {
     args: false,
     cooldown: false,
     execute(message, args) {
+        // load dependencies
         const Discord = require('discord.js');
+        const st = require('..\\helperMethods\\send-text.js');
+
         if (args[0]=='?') {
-            message.channel.send('returns a great reference to a 2011 song.\nusage: !creeper (no args needed)')
+            st.clearMessage();
+            st.setTitle('Creeper - HELP');
+            st.addText('returns a great reference to a 2011 song.\nusage: !creeper (no args needed)');
+            st.sendMessage(message.channel);
+            return;
         }
-        let embed = new Discord.RichEmbed;
-        embed.setColor(0x0099ff);
-        embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
-        embed.addField('Creeper', 'AWW MAN!', true);
-        message.channel.send(embed);
+        
+        // format the message
+        st.clearMessage();
+        st.addText('Aww Man');
+        st.setTitle('Creeper?');
+        
+        
+        st.sendMessage(message.channel);
     },
 };

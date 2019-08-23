@@ -8,6 +8,7 @@ module.exports = {
     cooldown: false,
     execute(message, args) {
         const Discord = require('discord.js');
+        const st = require('..\\helperMethods\\send-text.js');
     // if(message.content.startsWith("!enemy ")){
     //     var dice = message.content.substr("!enemy ".length);
     //     var darray = dice.split(" ");
@@ -15,9 +16,12 @@ module.exports = {
     // }
 
         if (args[0] == '?') {
-            message.channel.send('this command generated an enemy based on a CR\n'
+            st.clearMessage();
+            st.setTitle('Enemy - ERROR');
+            st.addText('this command generated an enemy based on a CR\n'
             +'usage: !enemy <desired cr>\n'
             +'suppored CR are: 0, 1-8, 1-4, 1-2, 1 through 24, and 30.');
+            st.sendMessage(message.channel);
             return;
         }
 
@@ -27,7 +31,10 @@ module.exports = {
         try {
             rawenemy = rf.execute(`.\\enemies\\${difficulty}.txt`);
         } catch (err) {
-            message.channel.send('CR not recognized. use the "?" argument to see how to use this command');
+            st.clearMessage();
+            st.setTitle('Enemy - ERROR');
+            st.addText('CR not recognized. use the "?" argument to see how to use this command');
+            st.sendMessage(message.channel);
             return;
         }
         var enemyarray = rawenemy.split("_");
@@ -81,12 +88,11 @@ module.exports = {
         finalhp = health + addhp
 
         if(true){
-            let embed = new Discord.RichEmbed;
-            embed.setColor(0x0099ff);
-            embed.setThumbnail('https://i.imgur.com/sRNA93B.png');
-            embed.addField('Enemy Generator',`A(n) ${enemyname} appears with ${finalhp} health points!`, true);
+            st.clearMessage();
+            st.setTitle('Enemy - Result');
+            st.addText(`A(n) ${enemyname} appears with ${finalhp} health points!`);
             // message.channel.send(`A(n) ${enemyname} appears with ${finalhp} health points!`);
-            message.channel.send(embed);
+            st.sendMessage(message.channel);
         }
     },
 };

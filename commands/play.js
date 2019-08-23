@@ -8,11 +8,16 @@ module.exports = {
 	cooldown: false,
 	async execute(message, args) {
 
+		const st = require('..\\helperMethods\\send-text.js');
+
 		if (args[0] == '?') {
-			message.channel.send('Plays an audio file with the given name.\n'
+			st.clearMessage();
+			st.setTitle('Play - HELP');
+			st.addText('Plays an audio file with the given name.\n'
 			+'If the audio file cannot be found, this will return audio files with similar names, if there are any.\n'
 			+'usage: !play <name of audio file> (no extension needed)\n'
 			+'Note: you must be in an audio channel for this command to work');
+			st.sendMessage(message.channel);
 			return;
 		}
 
@@ -44,7 +49,11 @@ module.exports = {
 		 if (foundIndex != undefined) {
 			 var voiceChannel = message.member.voiceChannel;
 			 if(!voiceChannel) {
-				 return message.reply("Must be in voice channel to execute this command.");
+				 st.clearMessage();
+				 st.setTitle('Play - ERROR');
+				 st.addText("Must be in voice channel to execute this command.");
+				 st.sendMessage(message.channel);
+				 return;
 			 }
 			 voiceChannel.join().then(connection => {
 				 const dispatcher = connection.playFile(`.\\uploads\\sounds\\${files[foundIndex]}`);
@@ -61,21 +70,25 @@ module.exports = {
             }
         }
         if (matches[0] == 1) {
-            this.execute(message, filesNoExtensions[matches[1]].split(' '));
+			this.execute(message, filesNoExtensions[matches[1]].split(' '));
+			console.log('going recursive!');
+			return;
         } else if (fileName.trim() == ""){
-                embed.setTitle("Sounds on Server:")
+				st.clearMessage();
+				st.setTitle("Sounds on Server:");
                 for (i = 0; i < files.length; i++) {
-                    embed.addField('\u200B',`**${filesNoExtensions[i]}**`);
+					st.addText(`**${filesNoExtensions[i]}**\n`);
                 }
         } else {
-            embed.addField('There were no sounds matching the name provided. Did you mean any of these: ','\u200B');
+			st.clearMessage();
+            st.setTitle('There were no sounds matching the name provided. Did you mean any of these: ');
             var searchLetters = fileName.substring(0, 3);
             for (i = 0; i < files.length; i++) {
                 if (files[i].match(searchLetters)) {
-                    embed.addField('\u200B',`**${filesNoExtensions[i]}**`);
+                    st.addText(`**${filesNoExtensions[i]}**\n`);
                 }
             }
         }
-        message.channel.send(embed);
+        st.sendMessage(message.channel);
     },
 };

@@ -9,12 +9,17 @@ module.exports = {
     cooldown: false,
     execute(message, args) {
 
+        const st = require('..\\helperMethods\\send-text.js');
+
         // checks for the help identifier, doesn't run anything else if true.
         if (args[0] == "?") {
-            message.channel.send('This commands allows for the retrieval of images stored by the bot\n' +
+            st.clearMessage();
+            st.setTitle('Show-Image - HELP');
+            st.addText('This commands allows for the retrieval of images stored by the bot\n' +
             'images can be uploaded for retireval by the \'upload\' command.\n' + 
             'usage: !show-image {name of image}\n' + 
             'if the image cannot be found, the bot will return the names of files similar to the filename given');
+            st.sendMessage(message.channel);
             return;
         }
 
@@ -60,20 +65,22 @@ module.exports = {
         }
         if (matches[0] == 1) {
             this.execute(message, filesNoExtensions[matches[1]].split(' '));
+            return;
         } else if (fileName.trim() == ""){
                 embed.setTitle("Images on Server:")
                 for (i = 0; i < files.length; i++) {
                     embed.addField('\u200B',`**${filesNoExtensions[i]}**`);
                 }
         } else {
-            embed.addField('There were no images matching the name provided. Did you mean any of these: ','\u200B');
+            st.clearMessage();
+            st.setTitle('There were no images matching the name provided. Did you mean any of these: ');
             var searchLetters = fileName.substring(0, 3);
             for (i = 0; i < files.length; i++) {
                 if (files[i].match(searchLetters)) {
-                    embed.addField('\u200B',`**${filesNoExtensions[i]}**`);
+                    st.addText(`**${filesNoExtensions[i]}**\n`);
                 }
             }
         }
-        message.channel.send(embed);
+        st.sendMessage(message.channel);
     },
 };
