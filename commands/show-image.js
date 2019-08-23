@@ -67,10 +67,12 @@ module.exports = {
             this.execute(message, filesNoExtensions[matches[1]].split(' '));
             return;
         } else if (fileName.trim() == ""){
-                embed.setTitle("Images on Server:")
+            console.log('no filename, listing images');
+                st.setTitle("Images on Server:")
                 for (i = 0; i < files.length; i++) {
-                    embed.addField('\u200B',`**${filesNoExtensions[i]}**`);
+                    st.addText(`**${filesNoExtensions[i]}**\n`);
                 }
+                console.log(st.text);
         } else {
             st.clearMessage();
             st.setTitle('There were no images matching the name provided. Did you mean any of these: ');
@@ -81,6 +83,9 @@ module.exports = {
                 }
             }
         }
-        st.sendMessage(message.channel);
+        console.log(st.text);
+        if (st.text != '') {
+            st.sendMessage(message.channel);
+        }
     },
 };

@@ -73,7 +73,8 @@ module.exports = {
                 }
             }
             // populate that embed with the text
-            embeds[j].addField('\u200B', embedText)
+            embeds[j].
+            addField('\u200B', embedText)
         }
         
         // send all of our embeds.
