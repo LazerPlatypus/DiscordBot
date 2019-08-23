@@ -2,7 +2,7 @@ module.exports = {
     name: 'rule-help',
     description: 'Returns the Offical D&D 5E ruling on commonly missed rules',
     aliases: ['rulehelp', 'rh'],
-    guildOnly: true,
+    guildOnly: false,
     args: true,
     usage: '<rule name>',
     cooldown: false,

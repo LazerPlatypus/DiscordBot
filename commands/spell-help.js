@@ -3,7 +3,7 @@ module.exports = {
     description: 'User types in the name of an existing spell,' +
     'and this method returns all the information about the spell',
     aliases: ['sh', 'spell-info', 'spellhelp', 'spellinfo'],
-    guildOnly: true,
+    guildOnly: false,
     args: true,
     usage: '<spell name>',
     cooldown: false,

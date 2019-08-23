@@ -49,7 +49,7 @@ module.exports = {
         }
 
         // send the message.
-        st.sendMessage(message.author);
+        st.sendMessage(message.channel);
 
         // var embeds = new Array(0);
         

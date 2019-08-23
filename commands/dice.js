@@ -2,7 +2,7 @@ module.exports = {
     name: 'dice',
     description: 'Allows the user to roll dice. syntax: !dice <amount> d<type>',
     aliases: ['roll'],
-    guildOnly: true,
+    guildOnly: false,
     args: true,
     cooldown: false,
     execute(message, args) {

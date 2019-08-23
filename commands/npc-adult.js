@@ -87,7 +87,7 @@ module.exports = {
         st.clearMessage();
         st.setAuthor('NPC-Adult - Results');
         if(isAdventurer){
-            st.addText('NPC Generator',`A(n) ${race} Adventurer appears! Their name is ${firstname} ${lastname}\n
+            st.addText(`A(n) ${race} Adventurer appears! Their name is ${firstname} ${lastname}\n
             Str: ${str}\n
             Dex: ${dex}\n
             Int: ${int}\n
@@ -95,11 +95,12 @@ module.exports = {
             Wis: ${wis}\n
             Cha: ${cha}\n
             They are a ${npcclass} and are ${Age} years old
-            Level: ${advLevel} , Health: ${advHealth}`, false
+            Level: ${advLevel} , Health: ${advHealth}`
             );
         } else {
-            st.addText('NPC Generator',`A regular ${race} appears!\n Their name is ${firstname} ${lastname}\n
-            They are a ${npcjob} and are ${Age} years old, they also have ${npcHealth} health points.`, false);
+            st.addText(`A regular ${race} appears!\n Their name is ${firstname} ${lastname}\n
+            They are a ${npcjob} and are ${Age} years old, they also have ${npcHealth} health points.`);
+            console.log(st.text);
         }
         st.sendMessage(message.channel);
     },

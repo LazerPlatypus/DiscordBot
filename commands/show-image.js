@@ -3,7 +3,7 @@ module.exports = {
     description: 'Displays an Img that has been uploaded before with its command, call the command by itself for a list',
     aliases: ['si', 'show', 'image'],
 
-    guildOnly: true,
+    guildOnly: false,
     args: false,
     usage: '<image name>',
     cooldown: false,
@@ -67,12 +67,10 @@ module.exports = {
             this.execute(message, filesNoExtensions[matches[1]].split(' '));
             return;
         } else if (fileName.trim() == ""){
-            console.log('no filename, listing images');
                 st.setTitle("Images on Server:")
                 for (i = 0; i < files.length; i++) {
                     st.addText(`**${filesNoExtensions[i]}**\n`);
                 }
-                console.log(st.text);
         } else {
             st.clearMessage();
             st.setTitle('There were no images matching the name provided. Did you mean any of these: ');
@@ -83,7 +81,6 @@ module.exports = {
                 }
             }
         }
-        console.log(st.text);
         if (st.text != '') {
             st.sendMessage(message.channel);
         }

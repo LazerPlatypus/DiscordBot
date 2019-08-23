@@ -2,7 +2,7 @@ module.exports = {
     name: 'upload',
     description: 'Allows the user to upload images to the bot',
     aliases: [],
-    guildOnly: true,
+    guildOnly: false,
     args: true,
     usage: '<new file name>',
     cooldown: false,

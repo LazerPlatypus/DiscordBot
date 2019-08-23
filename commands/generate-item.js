@@ -3,6 +3,7 @@ module.exports = {
     description: 'returns an item specified by the loot lookup table',
     aliases: ['gi', 'random-item', 'make-item', 'loot-gen', 'genloot'],
     args: true,
+    guildOnly: false,
     usage: '<amount of loot> <value of loot>',
     cooldown: false,
     execute(message, args) {
