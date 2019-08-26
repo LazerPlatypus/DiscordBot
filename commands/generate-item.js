@@ -25,11 +25,31 @@ module.exports = {
         let lootAmount = parseInt(args[0]);
         let lootClass = args[1];
 
+        if(lootAmount > 10000) {
+            st.clearMessage();
+            st.setTitle('Generate Item - ERROR');
+            st.addText('The maximum number of items that and be generated at once is 10000.');
+            st.sendMessage(message.channel);
+            return;
+        } else if(lootAmount < 1) {
+            st.clearMessage();
+            st.setTitle('Generate Item - ERROR');
+            st.addText('At least one item must be generated.');
+            st.sendMessage(message.channel);
+            return;
+        } else if (!Number.isInteger(lootAmount)){
+            st.clearMessage();
+            st.setTitle('Generate Item - ERROR');
+            st.addText('Enter the amount of loot to generate as a numerical value.');
+            st.sendMessage(message.channel);
+            return;
+        }
+
         let items = is.execute('.\\items.txt', lootClass);
         if (items.length < 1) {
             st.clearMessage();
             st.setTitle('Generate Item - ERROR');
-            st.addText('There are no items of that class.');
+            st.addText('There are no items of that class. Valid loot scale is 1 to 20.');
             st.sendMessage(message.channel);
             return;
         }
