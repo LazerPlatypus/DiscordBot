@@ -10,8 +10,10 @@ module.exports = {
         var items = FP.execute(fileName, 10);
         var selectedItems = new Array(0);
         items.forEach(item => {
-            if (item[9].trim() == scale.trim()) {
-                selectedItems.push(item);
+            if (item[9] != undefined) {
+                if (item[9].trim() == scale.trim()) {
+                    selectedItems.push(item);
+                }
             }
         })
         return selectedItems;
