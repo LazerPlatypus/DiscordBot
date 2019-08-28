@@ -17,7 +17,7 @@ module.exports = {
 
         if (args[0] == '?') {
             st.clearMessage();
-            st.setTitle('Enemy - ERROR');
+            st.setTitle('Enemy - HELP');
             st.addText('this command generated an enemy based on a CR\n'
             +'usage: !enemy <desired cr>\n'
             +'suppored CR are: 0, 1-8, 1-4, 1-2, 1 through 24, and 30.');
