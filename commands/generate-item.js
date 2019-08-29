@@ -45,6 +45,14 @@ module.exports = {
             return;
         }
 
+        if(lootClass == null) {
+            st.clearMessage();
+            st.setTitle('Generate Item - ERROR');
+            st.addText('Must enter scale of loot.');
+            st.sendMessage(message.channel);
+            return;
+        }
+
         let items = is.execute('.\\items.txt', lootClass);
         if (items.length < 1) {
             st.clearMessage();
